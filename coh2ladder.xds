@@ -1,0 +1,148 @@
+{
+    "name": "coh2ladder",
+    "settings": {
+        "spacesToIndent": 4,
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "urlPrefix": "http://localhost:82",
+        "exportPath": "/home/sj/webapps/coh2ladder-publish",
+        "buildShouldOverwriteIndex": true,
+        "sdkPath": "/home/sj/webapps/sencha-touch-2.2.1"
+    },
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "touch22",
+    "topInstanceFileMap": {
+        "096ebbfa-6703-4251-b345-7ed6c1adf137": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "5d7e6719-46fd-42ec-b057-fa272a876bd6": {
+            "paths": [
+                "metadata/model/Player",
+                "app/model/override/Player.js",
+                "app/model/Player.js"
+            ],
+            "className": "Player"
+        },
+        "67d2ce99-8608-4c30-a821-e0e3fcfc10f4": {
+            "paths": [
+                "metadata/model/Rank",
+                "app/model/override/Rank.js",
+                "app/model/Rank.js"
+            ],
+            "className": "Rank"
+        },
+        "ba76266e-727b-4e10-ad69-f6dd7e457f1d": {
+            "paths": [
+                "metadata/model/Faction",
+                "app/model/override/Faction.js",
+                "app/model/Faction.js"
+            ],
+            "className": "Faction"
+        },
+        "18e47db4-86db-453d-8c68-92ae768036c9": {
+            "paths": [
+                "metadata/model/GameMode",
+                "app/model/override/GameMode.js",
+                "app/model/GameMode.js"
+            ],
+            "className": "GameMode"
+        },
+        "c8202af6-2469-46f6-afcc-93460432887f": {
+            "paths": [
+                "metadata/resource/packager",
+                "",
+                "packager.json"
+            ],
+            "className": "packager"
+        },
+        "d3e12e51-b72a-4dbf-89a9-2fa3d626c9b0": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        },
+        "aeb4077c-5d58-4411-8a3b-7a4c33c3d533": {
+            "paths": [
+                "metadata/view/LadderDataItem",
+                "app/view/override/LadderDataItem.js",
+                "app/view/LadderDataItem.js"
+            ],
+            "className": "LadderDataItem"
+        },
+        "ff02c5b6-db78-4531-a23c-27bf82bbe513": {
+            "paths": [
+                "metadata/view/LadderTabView",
+                "app/view/override/LadderTabView.js",
+                "app/view/LadderTabView.js"
+            ],
+            "className": "LadderTabView"
+        },
+        "2efc2d50-3a4e-44c0-bd7f-7e2b232b80fd": {
+            "paths": [
+                "metadata/view/LadderCarousel",
+                "app/view/override/LadderCarousel.js",
+                "app/view/LadderCarousel.js"
+            ],
+            "className": "LadderCarousel"
+        },
+        "d645035a-b2fb-4787-ac59-4340870cfb12": {
+            "paths": [
+                "metadata/view/LadderPage",
+                "app/view/override/LadderPage.js",
+                "app/view/LadderPage.js"
+            ],
+            "className": "LadderPage"
+        },
+        "35d3a467-964f-4d3b-9159-11b7d5f88dfc": {
+            "paths": [
+                "metadata/controller/LadderTabController",
+                "app/controller/override/LadderTabController.js",
+                "app/controller/LadderTabController.js"
+            ],
+            "className": "LadderTabController"
+        },
+        "103800c4-af10-403a-95f8-08edee3c6211": {
+            "paths": [
+                "metadata/store/EmptyStore",
+                "app/store/override/EmptyStore.js",
+                "app/store/EmptyStore.js"
+            ],
+            "className": "EmptyStore"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "aeb4077c-5d58-4411-8a3b-7a4c33c3d533",
+            "ff02c5b6-db78-4531-a23c-27bf82bbe513",
+            "2efc2d50-3a4e-44c0-bd7f-7e2b232b80fd",
+            "d645035a-b2fb-4787-ac59-4340870cfb12"
+        ],
+        "store": [
+            "103800c4-af10-403a-95f8-08edee3c6211"
+        ],
+        "controller": [
+            "35d3a467-964f-4d3b-9159-11b7d5f88dfc"
+        ],
+        "model": [
+            "5d7e6719-46fd-42ec-b057-fa272a876bd6",
+            "67d2ce99-8608-4c30-a821-e0e3fcfc10f4",
+            "ba76266e-727b-4e10-ad69-f6dd7e457f1d",
+            "18e47db4-86db-453d-8c68-92ae768036c9"
+        ],
+        "resource": [
+            "096ebbfa-6703-4251-b345-7ed6c1adf137",
+            "c8202af6-2469-46f6-afcc-93460432887f",
+            "d3e12e51-b72a-4dbf-89a9-2fa3d626c9b0"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

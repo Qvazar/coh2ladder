@@ -1,0 +1,27 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "storeId": "emptystore",
+        "designer|userClassName": "EmptyStore"
+    },
+    "designerId": "103800c4-af10-403a-95f8-08edee3c6211",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dummy"
+            },
+            "designerId": "36cac9ca-f8b6-4e33-ade2-82133a783f61"
+        }
+    ]
+}

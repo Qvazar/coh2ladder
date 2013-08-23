@@ -1,0 +1,144 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Player"
+    },
+    "designerId": "5d7e6719-46fd-42ec-b057-fa272a876bd6",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name",
+                "type": "string"
+            },
+            "designerId": "3400a0d1-df60-4ada-9df4-37bcfef19061"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "steam_avatar_url",
+                "type": "string"
+            },
+            "designerId": "9bfa4893-a3b5-44b3-946a-24176c0a5af5"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "steam_profile_url",
+                "type": "string"
+            },
+            "designerId": "089441e8-ffbe-4bd1-9cd8-c0fd6266d25d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "level",
+                "type": "int"
+            },
+            "designerId": "49bc1c94-61c9-433f-b119-46cc554fad79"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "experience",
+                "type": "int"
+            },
+            "designerId": "ac3ef260-079a-4738-9364-289b3f934be9"
+        },
+        {
+            "type": "Ext.data.association.HasMany",
+            "reference": {
+                "name": "hasMany",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "hasManyRank",
+                "model": "Rank",
+                "autoLoad": true
+            },
+            "designerId": "87a480c1-5298-46eb-8d2e-169595bf0a24"
+        },
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "batchActions": false,
+                "data": [
+                    "[",
+                    "    {",
+                    "        id: 'player-0',",
+                    "        name: 'Qvazar',",
+                    "        steam_avatar_url: 'http://media.steampowered.com/steamcommunity/public/images/avatars/e6/e67d1e9ca8a6399421f7f04fd279e33d5bb850f2_full.jpg',",
+                    "        steam_profile_url: 'http://steamcommunity.com/profiles/76561198038741197/',",
+                    "        level: 74,",
+                    "        experience: 2624093",
+                    "    },",
+                    "    {",
+                    "        id: 'player-1',",
+                    "        name: 'AmiPolizeiFunk',",
+                    "        steam_avatar_url: 'http://media.steampowered.com/steamcommunity/public/images/avatars/96/967ec7de5b0cc44723fc349f8452b3c46537c165_full.jpg',",
+                    "        steam_profile_url: 'http://steamcommunity.com/profiles/76561197993926044/',",
+                    "        level: 54,",
+                    "        experience: 1224093",
+                    "    },",
+                    "    {",
+                    "        id: 'player-2',",
+                    "        name: 'Sepha',",
+                    "        steam_avatar_url: 'http://media.steampowered.com/steamcommunity/public/images/avatars/b0/b054576a4d67fc1e49739c435bbf3b7790043c38_full.jpg',",
+                    "        steam_profile_url: 'http://steamcommunity.com/profiles/76561198002889232',",
+                    "        level: 56,",
+                    "        experience: 1624093",
+                    "    }",
+                    "]"
+                ]
+            },
+            "designerId": "8f18ed6d-d735-409d-b722-195fb289d275",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "5d70fc4e-82fd-4bce-a5e8-7690b2d713a9"
+                }
+            ]
+        }
+    ]
+}

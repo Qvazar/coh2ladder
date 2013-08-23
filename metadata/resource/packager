@@ -1,0 +1,34 @@
+{
+    "type": "packagesetting",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "packager",
+        "applicationName": "CoH2 Ladder",
+        "applicationId": "org.coh2.ladder",
+        "versionString": "1.0",
+        "versionCode": "1",
+        "icon": [
+            "{\"57\":\"resources/icons/Icon.png\",\"72\":\"resources/icons/Icon~ipad.png\",\"114\":\"resources/icons/Icon@2x.png\",\"144\":\"resources/icons/Icon~ipad@2x.png\"}"
+        ],
+        "inputPath": "./",
+        "outputPath": "../build/",
+        "configuration": "Release",
+        "platform": "iOSSimulator",
+        "deviceType": "Universal",
+        "androidAPILevel": "8",
+        "permissions": [
+            "INTERNET"
+        ],
+        "orientations": [
+            "portrait",
+            "landscapeLeft",
+            "landscapeRight",
+            "portraitUpsideDown"
+        ]
+    },
+    "designerId": "c8202af6-2469-46f6-afcc-93460432887f"
+}

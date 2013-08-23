@@ -1,0 +1,339 @@
+{
+    "type": "Ext.dataview.component.DataItem",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "levelImages": [
+            "[",
+            "'rank_01_private_class_1.png',",
+            "'rank_01_private_class_2.png',",
+            "'rank_01_private_class_3.png',",
+            "'rank_01_private_class_4.png',",
+            "'rank_01_private.png',",
+            "'rank_02_senior_private_class_1.png',",
+            "'rank_02_senior_private_class_2.png',",
+            "'rank_02_senior_private_class_3.png',",
+            "'rank_02_senior_private_class_4.png',",
+            "'rank_02_senior_private.png',",
+            "'rank_03_corporal_class_1.png',",
+            "'rank_03_corporal_class_2.png',",
+            "'rank_03_corporal_class_3.png',",
+            "'rank_03_corporal_class_4.png',",
+            "'rank_03_corporal.png',",
+            "'rank_04_senior_corporal_class_1.png',",
+            "'rank_04_senior_corporal_class_2.png',",
+            "'rank_04_senior_corporal_class_3.png',",
+            "'rank_04_senior_corporal_class_4.png',",
+            "'rank_04_senior_corporal.png',",
+            "'rank_05_junior_sergeant_class_1.png',",
+            "'rank_05_junior_sergeant_class_2.png',",
+            "'rank_05_junior_sergeant_class_3.png',",
+            "'rank_05_junior_sergeant_class_4.png',",
+            "'rank_05_junior_sergeant.png',",
+            "'rank_06_sergeant_class_1.png',",
+            "'rank_06_sergeant_class_2.png',",
+            "'rank_06_sergeant_class_3.png',",
+            "'rank_06_sergeant_class_4.png',",
+            "'rank_06_sergeant.png',",
+            "'rank_07_senior_sergeant_class_1.png',",
+            "'rank_07_senior_sergeant_class_2.png',",
+            "'rank_07_senior_sergeant_class_3.png',",
+            "'rank_07_senior_sergeant_class_4.png',",
+            "'rank_07_senior_sergeant.png',",
+            "'rank_08_master_sergeant_class_1.png',",
+            "'rank_08_master_sergeant_class_2.png',",
+            "'rank_08_master_sergeant_class_3.png',",
+            "'rank_08_master_sergeant_class_4.png',",
+            "'rank_08_master_sergeant.png',",
+            "'rank_09_sergeant_major_class_1.png',",
+            "'rank_09_sergeant_major_class_2.png',",
+            "'rank_09_sergeant_major_class_3.png',",
+            "'rank_09_sergeant_major_class_4.png',",
+            "'rank_09_sergeant_major.png',",
+            "'rank_10_warrant_officer_class_1.png',",
+            "'rank_10_warrant_officer_class_2.png',",
+            "'rank_10_warrant_officer_class_3.png',",
+            "'rank_10_warrant_officer_class_4.png',",
+            "'rank_10_warrant_officer.png',",
+            "'rank_11_senior_warrant_officer_class_1.png',",
+            "'rank_11_senior_warrant_officer_class_2.png',",
+            "'rank_11_senior_warrant_officer_class_3.png',",
+            "'rank_11_senior_warrant_officer_class_4.png',",
+            "'rank_11_senior_warrant_officer.png',",
+            "'rank_12_junior_lieutenant_class_1.png',",
+            "'rank_12_junior_lieutenant_class_2.png',",
+            "'rank_12_junior_lieutenant_class_3.png',",
+            "'rank_12_junior_lieutenant_class_4.png',",
+            "'rank_12_junior_lieutenant.png',",
+            "'rank_13_lieutenant_class_1.png',",
+            "'rank_13_lieutenant_class_2.png',",
+            "'rank_13_lieutenant_class_3.png',",
+            "'rank_13_lieutenant_class_4.png',",
+            "'rank_13_lieutenant.png',",
+            "'rank_14_senior_lieutenant_class_1.png',",
+            "'rank_14_senior_lieutenant_class_2.png',",
+            "'rank_14_senior_lieutenant_class_3.png',",
+            "'rank_14_senior_lieutenant_class_4.png',",
+            "'rank_14_senior_lieutenant.png',",
+            "'rank_15_captain_class_1.png',",
+            "'rank_15_captain_class_2.png',",
+            "'rank_15_captain_class_3.png',",
+            "'rank_15_captain_class_4.png',",
+            "'rank_15_captain.png',",
+            "'rank_16_senior_captain_class_1.png',",
+            "'rank_16_senior_captain_class_2.png',",
+            "'rank_16_senior_captain_class_3.png',",
+            "'rank_16_senior_captain_class_4.png',",
+            "'rank_16_senior_captain.png',",
+            "'rank_17_major_class_1.png',",
+            "'rank_17_major_class_2.png',",
+            "'rank_17_major_class_3.png',",
+            "'rank_17_major_class_4.png',",
+            "'rank_17_major.png',",
+            "'rank_18_lieutenant_colonel_class_1.png',",
+            "'rank_18_lieutenant_colonel_class_2.png',",
+            "'rank_18_lieutenant_colonel_class_3.png',",
+            "'rank_18_lieutenant_colonel_class_4.png',",
+            "'rank_18_lieutenant_colonel.png',",
+            "'rank_19_colonel_class_1.png',",
+            "'rank_19_colonel_class_2.png',",
+            "'rank_19_colonel_class_3.png',",
+            "'rank_19_colonel_class_4.png',",
+            "'rank_19_colonel.png',",
+            "'rank_20_brigadier_general_class_1.png',",
+            "'rank_20_brigadier_general_class_2.png',",
+            "'rank_20_brigadier_general_class_3.png',",
+            "'rank_20_brigadier_general_class_4.png',",
+            "'rank_20_brigadier_general.png',",
+            "'rank_21_major_general.png'",
+            "",
+            "]"
+        ],
+        "cls": [
+            "ladder-row"
+        ],
+        "padding": null,
+        "designer|userClassName": "LadderDataItem",
+        "designer|userAlias": "ladderdataitem",
+        "layout": "hbox"
+    },
+    "configAlternates": {
+        "levelImages": "array"
+    },
+    "designerId": "aeb4077c-5d58-4411-8a3b-7a4c33c3d533",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "levelImages",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "updateRecord",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "record.getPlayer(function(player) {",
+                    "    var cmp = Ext.bind(this.getComponent, this);",
+                    "    ",
+                    "    var wins = record.get('wins'),",
+                    "        losses = record.get('losses'),",
+                    "        total = wins + losses,",
+                    "        percentage = (wins / total * 100).toFixed(1),",
+                    "        streak = record.get('streak'),",
+                    "        streakCls = streak > 0 ? 'positive' : 'negative';",
+                    "    ",
+                    "    streak = (streak > 0) ? ('+' + streak) : streak;",
+                    "    ",
+                    "    cmp('rank').setHtml(record.get('rank'));",
+                    "    cmp('xp').setSrc('resources/images/levels/' + this.getLevelImages()[player.get('level')]);",
+                    "    cmp('playerName').setHtml('<div>' + player.get('name') + '</div>');",
+                    "    cmp('wins').setHtml(wins);",
+                    "    cmp('losses').setHtml(losses);",
+                    "    cmp('percentage').setHtml(percentage);",
+                    "    cmp('streak').replaceCls(['positive', 'negative'], streakCls);",
+                    "    cmp('streak').setHtml(record.get('streak'));",
+                    "    cmp('drops').setHtml(record.get('drops'));",
+                    "    cmp('disputes').setHtml(record.get('disputes'));",
+                    "}, this);"
+                ]
+            },
+            "designerId": "75a6db44-6d58-422d-9585-b924a9611ebc"
+        },
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "cls": [
+                    "ladder-cell",
+                    "rank"
+                ],
+                "html": null,
+                "itemId": "rank"
+            },
+            "designerId": "138b4df4-e435-4406-aec3-92389e272c79"
+        },
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "cls": [
+                    "ladder-cell",
+                    "xp"
+                ],
+                "itemId": "xp",
+                "width": null,
+                "src": "null"
+            },
+            "designerId": "dad46cf2-33f3-4ef0-89a1-53ea957f743b"
+        },
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 3,
+                "cls": [
+                    "ladder-cell",
+                    "player"
+                ],
+                "html": null,
+                "itemId": "playerName"
+            },
+            "designerId": "469346b7-2d46-4388-a69a-a0b0342ac8f7"
+        },
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "cls": [
+                    "ladder-cell",
+                    "wins"
+                ],
+                "html": null,
+                "itemId": "wins"
+            },
+            "designerId": "84e4abc7-1b24-433e-bcf6-aaaef173140f"
+        },
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "cls": [
+                    "ladder-cell",
+                    "losses"
+                ],
+                "html": null,
+                "itemId": "losses"
+            },
+            "designerId": "d53add23-25ad-4ee0-8073-e49dc31de216"
+        },
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "cls": [
+                    "ladder-cell",
+                    "percentage"
+                ],
+                "html": null,
+                "itemId": "percentage"
+            },
+            "designerId": "93767644-bf8f-4da1-be31-86b23f4a2444"
+        },
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "cls": [
+                    "ladder-cell",
+                    "streak"
+                ],
+                "html": null,
+                "itemId": "streak"
+            },
+            "designerId": "354a432d-1b94-4174-b162-e652e811ed4b"
+        },
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "cls": [
+                    "ladder-cell",
+                    "drops"
+                ],
+                "html": null,
+                "itemId": "drops"
+            },
+            "designerId": "11b075ba-b13d-4113-8789-5398269176e4"
+        },
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "cls": [
+                    "ladder-cell",
+                    "disputes"
+                ],
+                "html": null,
+                "itemId": "disputes"
+            },
+            "designerId": "e921a850-3e71-4d04-a193-3c6f33176724"
+        }
+    ]
+}

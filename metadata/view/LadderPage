@@ -1,0 +1,326 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "gameModeId": "gamemode-1v1",
+        "factionId": "faction-germans",
+        "itemId": "ladderPage1",
+        "designer|userClassName": "LadderPage",
+        "designer|userAlias": "ladderpage",
+        "requires": [
+            "Coh2Ladder.view.LadderDataItem",
+            "Ext.dataview.DataView"
+        ],
+        "layout": "fit"
+    },
+    "designerId": "d645035a-b2fb-4787-ac59-4340870cfb12",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "gameModeId",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "factionId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "ladder-header"
+                ],
+                "docked": "top",
+                "itemId": "ladderHeader",
+                "ui": "dark",
+                "layout": "hbox"
+            },
+            "designerId": "dc588014-e66d-4057-8001-17b45ba847fb",
+            "cn": [
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "rank"
+                        ],
+                        "html": "#",
+                        "designer|displayName": "rank"
+                    },
+                    "designerId": "15271308-0051-493a-bf8d-2f887b039f12"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "xp"
+                        ],
+                        "html": "XP",
+                        "designer|displayName": "xp"
+                    },
+                    "designerId": "b0d6703d-5a87-43e8-b29c-f1d1bcd4489a"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 3,
+                        "cls": [
+                            "ladder-cell",
+                            "player"
+                        ],
+                        "html": "<div>Steam alias</div>",
+                        "designer|displayName": "player"
+                    },
+                    "designerId": "34faeb34-7b78-4958-b473-1865af1c5555"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "wins"
+                        ],
+                        "html": "W",
+                        "designer|displayName": "wins"
+                    },
+                    "designerId": "65ab95d4-2833-4c16-a5ce-2a9736bfcbbc"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "losses"
+                        ],
+                        "html": "L",
+                        "designer|displayName": "losses"
+                    },
+                    "designerId": "c3c351a8-2bed-4196-b530-f45e44d70914"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "percentage"
+                        ],
+                        "html": "%",
+                        "designer|displayName": "percentage"
+                    },
+                    "designerId": "62d9f7d1-6c05-4883-89b8-5b981cae1bc9"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "streak"
+                        ],
+                        "html": "<div>Streak</div>",
+                        "designer|displayName": "streak"
+                    },
+                    "designerId": "18b2eec1-6c7e-41ba-84c7-fdd3d95d6b53"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "drops"
+                        ],
+                        "html": "<div>Drops</div>",
+                        "designer|displayName": "drops"
+                    },
+                    "designerId": "b44e9124-be30-4b33-9d2d-4cd239fdbcc6"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "disputes"
+                        ],
+                        "html": "<div>Disputes</div>",
+                        "designer|displayName": "disputes"
+                    },
+                    "designerId": "6d2c97da-81a0-44ac-92b3-fb5b963649d7"
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "dataView",
+                "disableSelection": true,
+                "defaultType": "ladderdataitem",
+                "store": "emptystore",
+                "useComponents": true
+            },
+            "designerId": "cc881a1e-0afa-4ede-92cf-dd68e3d82195"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();",
+                    "",
+                    "this.getComponent('dataView').setStore({",
+                    "    model: 'Coh2Ladder.model.Rank',",
+                    "    sorters: 'rank'",
+                    "});",
+                    "",
+                    "this.syncStore();"
+                ]
+            },
+            "designerId": "915d291a-6fb5-4981-bd8c-89ae2363f63e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "updateFactionId",
+                "designer|params": [
+                    "newValue",
+                    "oldValue"
+                ],
+                "implHandler": [
+                    "if (this.initialized)",
+                    "\tthis.syncStore();"
+                ]
+            },
+            "designerId": "de00f98d-d7c5-4bb3-9d3a-7f754f80249c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "updateGameModeId",
+                "designer|params": [
+                    "newValue",
+                    "oldValue"
+                ],
+                "implHandler": [
+                    "if (this.initialized)",
+                    "\tthis.syncStore();"
+                ]
+            },
+            "designerId": "54d1f1e2-c2c9-4130-9636-d9f56217ef79"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "syncStore",
+                "implHandler": [
+                    "var dataView = this.getComponent('dataView');",
+                    "var store = dataView.getStore();",
+                    "store.setFilters([",
+                    "{",
+                    "    property: 'faction_id',",
+                    "    value: this.getFactionId()",
+                    "},",
+                    "{",
+                    "    property: 'gamemode_id',",
+                    "    value: this.getGameModeId()",
+                    "}",
+                    "]);",
+                    "",
+                    "store.load();",
+                    "",
+                    "//dataView.refresh();",
+                    "//debugger;"
+                ]
+            },
+            "designerId": "b7af8f0f-57f7-4f94-b2ba-d67dffd129b8"
+        }
+    ]
+}

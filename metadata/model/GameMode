@@ -1,0 +1,69 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "GameMode"
+    },
+    "designerId": "18e47db4-86db-453d-8c68-92ae768036c9",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name",
+                "type": "string"
+            },
+            "designerId": "e9ccbd82-c85d-4a78-a903-02dda3fabdf0"
+        },
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[",
+                    "    {",
+                    "        id: 'gamemode-1v1',",
+                    "        name: '1v1'",
+                    "    },",
+                    "    {",
+                    "        id: 'gamemode-2v2',",
+                    "        name: '2v2'",
+                    "    },",
+                    "    {",
+                    "        id: 'gamemode-3v3',",
+                    "        name: '3v3'",
+                    "    },",
+                    "    {",
+                    "        id: 'gamemode-4v4',",
+                    "        name: '4v4'",
+                    "    }",
+                    "]"
+                ]
+            },
+            "designerId": "507f8edc-9f28-4afe-b627-ea23c32613b7",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "cc6e3b7d-73d0-43a0-ae90-2e9306131f29"
+                }
+            ]
+        }
+    ]
+}

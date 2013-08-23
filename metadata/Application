@@ -1,0 +1,30 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Player",
+            "Rank",
+            "Faction",
+            "GameMode"
+        ],
+        "stores": [
+            "EmptyStore"
+        ],
+        "views": [
+            "LadderDataItem",
+            "LadderTabView",
+            "LadderCarousel",
+            "LadderPage"
+        ],
+        "controllers": [
+            "LadderTabController"
+        ],
+        "name": "Coh2Ladder"
+    },
+    "designerId": "application"
+}

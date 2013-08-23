@@ -1,0 +1,129 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LadderTabView",
+        "designer|userAlias": "laddertabview",
+        "requires": [
+            "Ext.Toolbar",
+            "Ext.SegmentedButton",
+            "Coh2Ladder.view.LadderCarousel",
+            "Ext.Button",
+            "Ext.data.Store"
+        ],
+        "designer|initialView": true,
+        "layout": "fit"
+    },
+    "designerId": "ff02c5b6-db78-4531-a23c-27bf82bbe513",
+    "cn": [
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top"
+            },
+            "designerId": "e71be302-517c-4596-affe-bdb88fdeb406",
+            "cn": [
+                {
+                    "type": "Ext.SegmentedButton",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": null,
+                        "container|pack": null,
+                        "itemId": "gameModeButtons",
+                        "allowToggle": null
+                    },
+                    "designerId": "f24cfa4f-4f9c-4049-a606-c296fa3d6ab5",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "..."
+                            },
+                            "designerId": "4156d8d5-ef2d-4f6e-8c8a-9cd932203f24"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "right",
+                        "layout": "hbox"
+                    },
+                    "designerId": "4a3e4d88-5368-4e39-a540-86577de8c660",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "searchButton",
+                                "ui": "plain",
+                                "width": null,
+                                "iconAlign": null,
+                                "iconCls": "search",
+                                "text": null
+                            },
+                            "designerId": "3e2556a4-1086-40dc-bd59-a3b890e59c0c"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "infoButton",
+                                "ui": "plain",
+                                "iconCls": "info",
+                                "text": ""
+                            },
+                            "designerId": "d7a7eb22-15a0-4a91-b1a8-e61e123b0649"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|animation": "flip",
+                "container|animation.direction": null,
+                "itemId": "ladderStack",
+                "layout": "card"
+            },
+            "designerId": "cb354874-9444-411d-a4ed-fa424d55ba05"
+        }
+    ]
+}

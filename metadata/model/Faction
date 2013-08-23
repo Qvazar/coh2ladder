@@ -1,0 +1,73 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Faction"
+    },
+    "designerId": "ba76266e-727b-4e10-ad69-f6dd7e457f1d",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "0a1c4f23-44c4-4309-b55e-26a9aa345457"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name",
+                "type": "string"
+            },
+            "designerId": "30aa0d04-2587-445d-9314-f532272a1127"
+        },
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[",
+                    "    {",
+                    "        \"id\":\"faction-germans\",",
+                    "        \"name\": \"Germans\"",
+                    "    },",
+                    "    {",
+                    "        \"id\":\"faction-soviets\",",
+                    "        \"name\": \"Soviets\"",
+                    "    }",
+                    "]"
+                ]
+            },
+            "designerId": "f9db8221-9f3e-4f45-b8cb-a97dfc96cf19",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "ceb86ede-9153-4666-b40e-441f96142aad"
+                }
+            ]
+        }
+    ]
+}

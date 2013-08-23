@@ -1,0 +1,13 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css",
+        "url": "coh2.css"
+    },
+    "designerId": "d3e12e51-b72a-4dbf-89a9-2fa3d626c9b0"
+}

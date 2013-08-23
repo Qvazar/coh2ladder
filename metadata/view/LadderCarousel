@@ -1,0 +1,48 @@
+{
+    "type": "Ext.carousel.Carousel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "gameModeId": "gamemode-1v1",
+        "designer|userClassName": "LadderCarousel",
+        "designer|userAlias": "laddercarousel",
+        "requires": [
+            "Coh2Ladder.view.LadderPage",
+            "Ext.data.Store"
+        ]
+    },
+    "designerId": "2efc2d50-3a4e-44c0-bd7f-7e2b232b80fd",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "gameModeId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "updateGameModeId",
+                "designer|params": [
+                    "newValue",
+                    "oldValue"
+                ],
+                "implHandler": [
+                    "this.query('ladderpage').forEach(function(ladderPage) {",
+                    "    ladderPage.setGameModeId(newValue);",
+                    "});"
+                ]
+            },
+            "designerId": "19adc93f-4831-4554-9b7d-be8a9edd6c29"
+        }
+    ]
+}
