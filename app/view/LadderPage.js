@@ -31,101 +31,12 @@ Ext.define('Coh2Ladder.view.LadderPage', {
         },
         items: [
             {
-                xtype: 'container',
-                cls: 'ladder-header',
-                docked: 'top',
-                itemId: 'ladderHeader',
-                ui: 'dark',
-                layout: {
-                    type: 'hbox'
-                },
-                items: [
-                    {
-                        xtype: 'component',
-                        flex: 1,
-                        cls: [
-                            'ladder-cell',
-                            'rank'
-                        ],
-                        html: '#'
-                    },
-                    {
-                        xtype: 'component',
-                        flex: 1,
-                        cls: [
-                            'ladder-cell',
-                            'xp'
-                        ],
-                        html: 'XP'
-                    },
-                    {
-                        xtype: 'component',
-                        flex: 3,
-                        cls: [
-                            'ladder-cell',
-                            'player'
-                        ],
-                        html: '<div>Steam alias</div>'
-                    },
-                    {
-                        xtype: 'component',
-                        flex: 1,
-                        cls: [
-                            'ladder-cell',
-                            'wins'
-                        ],
-                        html: 'W'
-                    },
-                    {
-                        xtype: 'component',
-                        flex: 1,
-                        cls: [
-                            'ladder-cell',
-                            'losses'
-                        ],
-                        html: 'L'
-                    },
-                    {
-                        xtype: 'component',
-                        flex: 1,
-                        cls: [
-                            'ladder-cell',
-                            'percentage'
-                        ],
-                        html: '%'
-                    },
-                    {
-                        xtype: 'component',
-                        flex: 1,
-                        cls: [
-                            'ladder-cell',
-                            'streak'
-                        ],
-                        html: '<div>Streak</div>'
-                    },
-                    {
-                        xtype: 'component',
-                        flex: 1,
-                        cls: [
-                            'ladder-cell',
-                            'drops'
-                        ],
-                        html: '<div>Drops</div>'
-                    },
-                    {
-                        xtype: 'component',
-                        flex: 1,
-                        cls: [
-                            'ladder-cell',
-                            'disputes'
-                        ],
-                        html: '<div>Disputes</div>'
-                    }
-                ]
-            },
-            {
                 xtype: 'dataview',
                 itemId: 'dataView',
+                scrollable: {
+                    direction: 'vertical',
+                    directionLock: true
+                },
                 disableSelection: true,
                 defaultType: 'ladderdataitem',
                 store: 'emptystore',

@@ -16,7 +16,7 @@
         ],
         "inputPath": "./",
         "outputPath": "../build/",
-        "configuration": "Release",
+        "configuration": null,
         "platform": "iOSSimulator",
         "deviceType": "Universal",
         "androidAPILevel": "8",

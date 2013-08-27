@@ -158,7 +158,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "associationKey": "gamemode_id",
+                "associationKey": null,
                 "designer|displayName": "hasOneGameMode",
                 "model": "GameMode"
             },

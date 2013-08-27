@@ -1,0 +1,212 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "player-view"
+        ],
+        "designer|userClassName": "PlayerView",
+        "designer|userAlias": "playerview",
+        "requires": [
+            "Ext.Img"
+        ],
+        "layout": "vbox"
+    },
+    "designerId": "8ee69461-7ece-404a-b7d1-5bfed18d2fbe",
+    "cn": [
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top"
+            },
+            "designerId": "a27bb760-85bc-4b62-a350-ad2775c890dc",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "1fee4c4f-ebd2-49a0-83b9-328a62da666e",
+                    "masterInstanceId": "659e610b-ea9f-436a-887e-0374d580707c"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "backButton",
+                        "ui": "back",
+                        "text": "Back"
+                    },
+                    "designerId": "ef5b4c41-f208-4271-aa4b-e05c221c0c6e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "f57953f5-d5d0-422d-9109-3e3aeb7e6e38",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "hbox"
+                    },
+                    "designerId": "5446e754-3c0c-401b-a659-680451fa6909",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "cls": [
+                                    "player-avatar"
+                                ],
+                                "height": null,
+                                "itemId": "playerAvatar",
+                                "src": "http://media.steampowered.com/steamcommunity/public/images/avatars/1a/1afd8afb74217c4a55bc7f629e7e70eac86c7c24_full.jpg"
+                            },
+                            "designerId": "f7a65358-c980-42b1-beb1-a29292165b66"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "cls": [
+                                    "player-level"
+                                ],
+                                "height": null,
+                                "itemId": "playerLevelImage",
+                                "mode": "",
+                                "src": "resources/images/levels/rank_18_lieutenant_colonel_class_4.png"
+                            },
+                            "designerId": "ed3dc1c0-a8cd-442c-a69a-747f42ccf473"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "vbox"
+                    },
+                    "designerId": "e7ad01e4-2fbe-4d95-8f6b-da35a6aff4bb",
+                    "cn": [
+                        {
+                            "type": "Ext.Component",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "playername"
+                                ],
+                                "html": "HelpingHans",
+                                "itemId": "playerName"
+                            },
+                            "designerId": "12d29622-7c87-473a-8aa4-179002320725"
+                        },
+                        {
+                            "type": "Ext.Component",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "XP: 4,558,786",
+                                "itemId": "playerXp"
+                            },
+                            "designerId": "3bd01d33-cdb1-42c9-a50c-5f4a2ee7ec90"
+                        },
+                        {
+                            "type": "Ext.Component",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "Lieutenant Colonel Fourth Class (89)",
+                                "itemId": "playerLevelText"
+                            },
+                            "designerId": "07d26d19-4af3-45fe-8ad0-940ba9ad4e57"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "german-rank"
+            },
+            "designerId": "7a7646f9-be6b-4bb1-9d6d-364c0ed3bf54"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "soviet-rank"
+            },
+            "designerId": "6fee6935-1d91-40bc-8c7c-3fe1037eaf2a"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "7793f099-24ed-4d6c-b245-2d814cee67c6",
+            "masterInstanceId": "3ad548bd-0007-4803-8da1-ac33b738be98"
+        }
+    ]
+}

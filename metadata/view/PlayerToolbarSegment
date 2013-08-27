@@ -1,0 +1,49 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "docked": "right",
+        "designer|userClassName": "PlayerToolbarSegment",
+        "designer|userAlias": "playertoolbarsegment",
+        "layout": "hbox"
+    },
+    "designerId": "659e610b-ea9f-436a-887e-0374d580707c",
+    "cn": [
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "searchButton",
+                "ui": "plain",
+                "width": null,
+                "iconAlign": null,
+                "iconCls": "search",
+                "text": null
+            },
+            "designerId": "3e2556a4-1086-40dc-bd59-a3b890e59c0c"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "infoButton",
+                "ui": "plain",
+                "iconCls": "info",
+                "text": ""
+            },
+            "designerId": "d7a7eb22-15a0-4a91-b1a8-e61e123b0649"
+        }
+    ]
+}

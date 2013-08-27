@@ -6,10 +6,83 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "LadderTabController"
+        "gameModeStore": [
+            "{",
+            "    model: 'Coh2Ladder.model.GameMode',",
+            "    sorters: 'name'",
+            "}"
+        ],
+        "factionStore": [
+            "{",
+            "    model: 'Coh2Ladder.model.Faction',",
+            "    sorters: 'name'",
+            "}"
+        ],
+        "playerStore": [
+            "{",
+            "    model: 'Coh2Ladder.model.Player'",
+            "}"
+        ],
+        "activeGameModeIndex": 0,
+        "designer|userClassName": "LadderTabController",
+        "requires": [
+            "Ext.data.Store"
+        ]
+    },
+    "configAlternates": {
+        "gameModeStore": "object",
+        "factionStore": "object",
+        "playerStore": "object",
+        "activeGameModeIndex": "number",
+        "activeFactionIndex": "number"
     },
     "designerId": "35d3a467-964f-4d3b-9159-11b7d5f88dfc",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "gameModeStore",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "factionStore",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "playerStore",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "activeGameModeIndex",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "activeFactionIndex",
+            "type": "string"
+        }
+    ],
     "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "applyFactionStore",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "return this.createStore(config);"
+                ]
+            },
+            "designerId": "d2d51ba5-60dc-4937-a4d9-9098584d90a8"
+        },
         {
             "type": "controlleraction",
             "reference": {
@@ -20,22 +93,54 @@
             "userConfig": {
                 "fn": "onGameModeButtonTap",
                 "implHandler": [
-                    "var index = this.getGameModeButtons().getItems().indexOf(button),",
-                    "    ladderStack = this.getLadderStack(),",
-                    "    currentIndex = ladderStack.getItems().indexOf(ladderStack.getActiveItem()),",
-                    "    animateDirection = index > currentIndex ? 'left' : 'right';",
+                    "var gameModeId = button.gameModeId,",
+                    "    gameModeName = this.getGameModeStore().findRecord('id', gameModeId).get('name'),",
+                    "    factionId = this.activeGameModeFactions[gameModeId],",
+                    "    factionName = this.getFactionStore().findRecord('id', factionId).get('name');",
                     "",
-                    "ladderStack.animateActiveItem(index, {",
-                    "    type: 'flip',",
-                    "    direction: animateDirection",
-                    "});",
-                    ""
+                    "this.redirectTo('ladder/' + gameModeName + '/' + factionName);"
                 ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
                 "designer|controlQuery": "laddertabview #gameModeButtons button"
             },
             "designerId": "2693d23b-dd7a-404f-a5be-830b528e05f5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "applyGameModeStore",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "return this.createStore(config);"
+                ]
+            },
+            "designerId": "860ac4f1-2123-4a88-b6be-0515411e9481"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "applyPlayerStore",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "return this.createStore(config);"
+                ]
+            },
+            "designerId": "2ac662ab-eab6-4538-a18c-8b75c08405ec"
         },
         {
             "type": "fixedfunction",
@@ -47,50 +152,46 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "this.gameModeStore = Ext.create('Ext.data.Store', {",
-                    "    model: 'Coh2Ladder.model.GameMode',",
-                    "    sorters: 'name'",
-                    "});",
                     "",
-                    "this.factionStore = Ext.create('Ext.data.Store', {",
-                    "    model: 'Coh2Ladder.model.Faction',",
-                    "    sorters: 'name'",
-                    "});",
-                    "",
-                    "this.playerStore = Ext.create('Ext.data.Store', {",
-                    "    model: 'Coh2Ladder.model.Player'",
-                    "});",
                     "// Need to load here to correctly load the data, as the first record loaded through associations is wrong..",
-                    "this.playerStore.load();",
+                    "this.getPlayerStore().load();",
                     "",
                     "var gameModeButtons = this.getGameModeButtons(),",
-                    "    ladderStack = this.getLadderStack();",
+                    "    ladderStack = this.getLadderStack(),",
+                    "    activeGameModeFactions = {};",
+                    "",
+                    "this.activeGameModeFactions = activeGameModeFactions;",
                     "",
                     "gameModeButtons.removeAll(true);",
                     "",
-                    "this.gameModeStore.load(function(gameModes) {",
-                    "    this.factionStore.load(function(factions) {",
-                    "",
+                    "this.getGameModeStore().load(function(gameModes) {",
+                    "    this.getFactionStore().load(function(factions) {",
+                    "        ",
                     "        gameModes.forEach(function(gameMode, gmIndex) {",
-                    "",
+                    "            ",
                     "            var name = gameMode.get('name'),",
                     "                gameModeId = gameMode.get('id');",
-                    "",
+                    "            ",
                     "            gameModeButtons.add({",
                     "                xtype: 'button',",
                     "                text: name,",
+                    "                gameModeId: gameModeId",
                     "            });",
-                    "",
+                    "            ",
                     "            ladderStack.add({",
                     "                xtype: 'laddercarousel',",
                     "                gameModeId: gameModeId,",
                     "                cls: [ 'gamemodepage', gameModeId ],",
                     "                items: (function() {",
-                    "",
+                    "                    ",
                     "                    var items = [];",
-                    "",
-                    "                    factions.forEach(function(faction) {",
+                    "                    ",
+                    "                    factions.forEach(function(faction, index) {",
                     "                        var factionId = faction.get('id');",
+                    "                        ",
+                    "                        if (!activeGameModeFactions[gameModeId]) {",
+                    "                            activeGameModeFactions[gameModeId] = factionId;",
+                    "                        }",
                     "",
                     "                        items.push({",
                     "                            xtype: 'ladderpage',",
@@ -104,7 +205,7 @@
                     "                }())",
                     "            });",
                     "        });",
-                    "        ",
+                    "",
                     "        gameModeButtons.setPressedButtons([0]);",
                     "",
                     "    }, this);",
@@ -112,6 +213,24 @@
                 ]
             },
             "designerId": "26506ba9-0c1a-4da6-8a1c-0db912b8aeb3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "createStore",
+                "designer|params": [
+                    "storeConfig"
+                ],
+                "implHandler": [
+                    "return Ext.create('Ext.data.Store', storeConfig);"
+                ]
+            },
+            "designerId": "e1134e6e-fc9c-4f2c-8e56-58e73dcf07c9"
         },
         {
             "type": "controllerref",
@@ -138,6 +257,88 @@
                 "selector": "#gameModeButtons"
             },
             "designerId": "013eee16-f5b9-4444-860c-0d58a5997387"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "ladder/:gameMode/:faction",
+                "fn": "showLadderGameModeAndFaction",
+                "designer|params": [
+                    "gameMode",
+                    "faction"
+                ],
+                "implHandler": [
+                    "var switchFaction = !!faction,",
+                    "    gameModeIndex = this.getGameModeStore().find('name', gameMode),",
+                    "    ladderStack = this.getLadderStack(),",
+                    "    gameModePage = ladderStack.getItems().getAt(gameModeIndex),",
+                    "    currentGameModeIndex = ladderStack.getItems().indexOf(ladderStack.getActiveItem()),",
+                    "    animateDirection = gameModeIndex < currentGameModeIndex ? 'right' : 'left';",
+                    "",
+                    "this.getGameModeButtons().setPressedButtons([ gameModeIndex ]);",
+                    "",
+                    "if (switchFaction) {",
+                    "    var factionIndex = this.getFactionStore().find('name', faction);",
+                    "",
+                    "    gameModePage.setActiveItem(factionIndex);",
+                    "}",
+                    "",
+                    "ladderStack.animateActiveItem(gameModeIndex, {",
+                    "    type: 'flip',",
+                    "    direction: animateDirection",
+                    "});",
+                    "",
+                    "",
+                    "this.getLadderTabView().show();"
+                ]
+            },
+            "designerId": "270ad430-168a-4c16-a360-603db48f0ba7"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "ladderTabView",
+                "selector": "laddertabview"
+            },
+            "designerId": "b690d183-78a6-4f0c-be51-d941b64b2cd6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFactionChange",
+                "implHandler": [
+                    "var gameModeId = container.getGameModeId(),",
+                    "    factionId = value.getFactionId(),",
+                    "\tgameModeName = this.getGameModeStore().findRecord('id', gameModeId).get('name'),",
+                    "    factionName = this.getFactionStore().findRecord('id', factionId).get('name');",
+                    "",
+                    "debugger;",
+                    "this.activeGameModeFactions[gameModeId] = factionId;",
+                    "",
+                    "this.getApplication().getHistory().add({",
+                    "    url: 'ladder/' + gameModeName + '/' + factionName",
+                    "}, /* silent */ true);"
+                ],
+                "name": "activeitemchange",
+                "designer|targetType": "LadderCarousel",
+                "designer|controlQuery": "laddercarousel"
+            },
+            "designerId": "8b7ee10d-ae2b-47a5-b4cb-67eda3aa8404"
         }
     ]
 }

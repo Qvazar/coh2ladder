@@ -18,6 +18,8 @@ Ext.define('Coh2Ladder.view.LadderTabView', {
     alias: 'widget.laddertabview',
 
     requires: [
+        'Coh2Ladder.view.PlayerToolbarSegment',
+        'Coh2Ladder.view.DataProviderToolbar',
         'Ext.Toolbar',
         'Ext.SegmentedButton',
         'Coh2Ladder.view.LadderCarousel',
@@ -35,6 +37,12 @@ Ext.define('Coh2Ladder.view.LadderTabView', {
                 docked: 'top',
                 items: [
                     {
+                        xtype: 'image',
+                        cls: 'coh2org-logo',
+                        itemId: 'coh2org-logo',
+                        src: 'resources/images/COH2_ORG_logo.png'
+                    },
+                    {
                         xtype: 'segmentedbutton',
                         itemId: 'gameModeButtons',
                         items: [
@@ -45,36 +53,111 @@ Ext.define('Coh2Ladder.view.LadderTabView', {
                         ]
                     },
                     {
-                        xtype: 'container',
-                        docked: 'right',
-                        layout: {
-                            type: 'hbox'
-                        },
-                        items: [
-                            {
-                                xtype: 'button',
-                                itemId: 'searchButton',
-                                ui: 'plain',
-                                iconCls: 'search'
-                            },
-                            {
-                                xtype: 'button',
-                                itemId: 'infoButton',
-                                ui: 'plain',
-                                iconCls: 'info',
-                                text: ''
-                            }
-                        ]
+                        xtype: 'playertoolbarsegment'
+                    }
+                ]
+            },
+            {
+                xtype: 'toolbar',
+                cls: 'ladder-header',
+                docked: 'top',
+                itemId: 'ladderHeader',
+                ui: 'light',
+                items: [
+                    {
+                        xtype: 'component',
+                        flex: 1,
+                        cls: [
+                            'ladder-cell',
+                            'rank'
+                        ],
+                        html: '#'
+                    },
+                    {
+                        xtype: 'component',
+                        flex: 1,
+                        cls: [
+                            'ladder-cell',
+                            'xp'
+                        ],
+                        html: 'XP'
+                    },
+                    {
+                        xtype: 'component',
+                        flex: 3,
+                        cls: [
+                            'ladder-cell',
+                            'player'
+                        ],
+                        html: '<div>Steam alias</div>'
+                    },
+                    {
+                        xtype: 'component',
+                        flex: 1,
+                        cls: [
+                            'ladder-cell',
+                            'wins'
+                        ],
+                        html: 'W'
+                    },
+                    {
+                        xtype: 'component',
+                        flex: 1,
+                        cls: [
+                            'ladder-cell',
+                            'losses'
+                        ],
+                        html: 'L'
+                    },
+                    {
+                        xtype: 'component',
+                        flex: 1,
+                        cls: [
+                            'ladder-cell',
+                            'percentage'
+                        ],
+                        html: '%'
+                    },
+                    {
+                        xtype: 'component',
+                        flex: 1,
+                        cls: [
+                            'ladder-cell',
+                            'streak'
+                        ],
+                        html: '<div>Streak</div>'
+                    },
+                    {
+                        xtype: 'component',
+                        flex: 1,
+                        cls: [
+                            'ladder-cell',
+                            'drops'
+                        ],
+                        html: '<div>Drops</div>'
+                    },
+                    {
+                        xtype: 'component',
+                        flex: 1,
+                        cls: [
+                            'ladder-cell',
+                            'disputes'
+                        ],
+                        html: '<div>Disputes</div>'
                     }
                 ]
             },
             {
                 xtype: 'container',
+                cls: 'ladder-stack',
                 itemId: 'ladderStack',
                 layout: {
                     animation: 'flip',
                     type: 'card'
                 }
+            },
+            {
+                xtype: 'dataprovidertoolbar'
             }
         ]
     }

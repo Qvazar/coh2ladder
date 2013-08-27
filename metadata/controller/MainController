@@ -1,0 +1,33 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MainController"
+    },
+    "designerId": "1396ca8a-6b69-4754-83f1-5545d1aab892",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "openCoh2Org",
+                "implHandler": [
+                    "debugger;",
+                    "Ext.device.Device.openURL('http://www.coh2.org');"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Img",
+                "designer|controlQuery": "#coh2org-logo"
+            },
+            "designerId": "50667b18-b297-4b4d-a439-14575a47b390"
+        }
+    ]
+}

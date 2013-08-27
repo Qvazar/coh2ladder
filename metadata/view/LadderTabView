@@ -33,6 +33,25 @@
             "designerId": "e71be302-517c-4596-affe-bdb88fdeb406",
             "cn": [
                 {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "coh2org-logo"
+                        ],
+                        "height": null,
+                        "itemId": "coh2org-logo",
+                        "width": null,
+                        "mode": null,
+                        "src": "resources/images/COH2_ORG_logo.png"
+                    },
+                    "designerId": "9521562b-d1d1-4d9f-b1d9-eea63201fd1a"
+                },
+                {
                     "type": "Ext.SegmentedButton",
                     "reference": {
                         "name": "items",
@@ -42,6 +61,7 @@
                     "userConfig": {
                         "container|align": null,
                         "container|pack": null,
+                        "docked": null,
                         "itemId": "gameModeButtons",
                         "allowToggle": null
                     },
@@ -62,51 +82,195 @@
                     ]
                 },
                 {
-                    "type": "Ext.Container",
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "bb05e74d-c8cf-4153-874b-682207451b8b",
+                    "masterInstanceId": "659e610b-ea9f-436a-887e-0374d580707c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "ladder-header"
+                ],
+                "docked": "top",
+                "itemId": "ladderHeader",
+                "ui": "light"
+            },
+            "designerId": "7f2eacdd-71b0-4b34-9542-713abf5a3d29",
+            "cn": [
+                {
+                    "type": "Ext.Component",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "docked": "right",
-                        "layout": "hbox"
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "rank"
+                        ],
+                        "html": "#",
+                        "designer|displayName": "rank"
                     },
-                    "designerId": "4a3e4d88-5368-4e39-a540-86577de8c660",
-                    "cn": [
-                        {
-                            "type": "Ext.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "itemId": "searchButton",
-                                "ui": "plain",
-                                "width": null,
-                                "iconAlign": null,
-                                "iconCls": "search",
-                                "text": null
-                            },
-                            "designerId": "3e2556a4-1086-40dc-bd59-a3b890e59c0c"
-                        },
-                        {
-                            "type": "Ext.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "itemId": "infoButton",
-                                "ui": "plain",
-                                "iconCls": "info",
-                                "text": ""
-                            },
-                            "designerId": "d7a7eb22-15a0-4a91-b1a8-e61e123b0649"
-                        }
-                    ]
+                    "designerId": "15271308-0051-493a-bf8d-2f887b039f12"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "xp"
+                        ],
+                        "html": "XP",
+                        "designer|displayName": "xp"
+                    },
+                    "designerId": "b0d6703d-5a87-43e8-b29c-f1d1bcd4489a"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 3,
+                        "cls": [
+                            "ladder-cell",
+                            "player"
+                        ],
+                        "html": "<div>Steam alias</div>",
+                        "designer|displayName": "player"
+                    },
+                    "designerId": "34faeb34-7b78-4958-b473-1865af1c5555"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "wins"
+                        ],
+                        "html": "W",
+                        "designer|displayName": "wins"
+                    },
+                    "designerId": "65ab95d4-2833-4c16-a5ce-2a9736bfcbbc"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "losses"
+                        ],
+                        "html": "L",
+                        "designer|displayName": "losses"
+                    },
+                    "designerId": "c3c351a8-2bed-4196-b530-f45e44d70914"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "percentage"
+                        ],
+                        "html": "%",
+                        "designer|displayName": "percentage"
+                    },
+                    "designerId": "62d9f7d1-6c05-4883-89b8-5b981cae1bc9"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "streak"
+                        ],
+                        "html": "<div>Streak</div>",
+                        "designer|displayName": "streak"
+                    },
+                    "designerId": "18b2eec1-6c7e-41ba-84c7-fdd3d95d6b53"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "drops"
+                        ],
+                        "html": "<div>Drops</div>",
+                        "designer|displayName": "drops"
+                    },
+                    "designerId": "b44e9124-be30-4b33-9d2d-4cd239fdbcc6"
+                },
+                {
+                    "type": "Ext.Component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "cls": [
+                            "ladder-cell",
+                            "disputes"
+                        ],
+                        "html": "<div>Disputes</div>",
+                        "designer|displayName": "disputes"
+                    },
+                    "designerId": "6d2c97da-81a0-44ac-92b3-fb5b963649d7"
                 }
             ]
         },
@@ -120,10 +284,23 @@
             "userConfig": {
                 "container|animation": "flip",
                 "container|animation.direction": null,
+                "cls": [
+                    "ladder-stack"
+                ],
                 "itemId": "ladderStack",
                 "layout": "card"
             },
             "designerId": "cb354874-9444-411d-a4ed-fa424d55ba05"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "b3f95652-2957-4cb1-bd13-dd3f0f0b59ac",
+            "masterInstanceId": "3ad548bd-0007-4803-8da1-ac33b738be98"
         }
     ]
 }

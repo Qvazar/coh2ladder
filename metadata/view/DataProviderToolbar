@@ -1,0 +1,38 @@
+{
+    "type": "Ext.Toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "center",
+        "container|pack": "center",
+        "cls": [
+            "bottom-toolbar"
+        ],
+        "docked": "bottom",
+        "html": null,
+        "designer|userClassName": "DataProviderToolbar",
+        "designer|userAlias": "dataprovidertoolbar",
+        "requires": [
+            "Ext.Label"
+        ]
+    },
+    "designerId": "3ad548bd-0007-4803-8da1-ac33b738be98",
+    "cn": [
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": null,
+                "html": "Data provided by <img src=\"resources/images/tiny_r.png\" /> Relic Entertainment"
+            },
+            "designerId": "488ab5ea-989b-47eb-a569-0eb8eb0466b3"
+        }
+    ]
+}
