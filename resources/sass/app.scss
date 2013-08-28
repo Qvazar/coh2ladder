@@ -1,6 +1,8 @@
 // The following two lines import the default Sencha Touch theme. If you are building
 // a new theme, remove them and the add your own CSS on top of the base CSS (which
 // is already included in your app.json file).
+$base-color: #bbb;
+
 @import 'sencha-touch/default';
 @import 'sencha-touch/default/all';
 
@@ -8,3 +10,121 @@
 
 // Examples of using the icon mixin:
 // @include icon('user');
+
+@media all and (max-width: 549px) {
+    .ladder-header,
+	.ladder-stack {
+        font-size:0.6em;
+    }
+
+    .coh2org-logo,
+    .x-layout-box>.x-layout-box-item.coh2org-logo {
+        display:none !important;
+    }
+}
+
+
+@media all and (min-width: 550px) and (max-width: 999px) {
+    .ladder-header,
+	.ladder-stack {
+        font-size:0.8em;
+    }
+}
+
+@media all and (min-width: 1000px) {
+    .ladder-header,
+	.ladder-stack {
+        font-size:1em;
+    }
+}
+
+.coh2org-logo {
+    border-radius:4px;
+    margin-right: 10px;
+    border: 1px solid black;
+    overflow:hidden;
+    width:242px !important;
+    height:44px !important;
+    background-size: auto !important;
+}
+
+.ladder-stack {
+    background-image: url("../images/bg1.png");
+    background-repeat: repeat;
+    background-position: top left;
+}
+
+.gamemodepage {
+    box-shadow:0 0 8px 4px #333;
+}
+
+.factionpage {
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center center;
+    /*background-color: white;*/
+}
+
+.factionpage.faction-germans {
+    background-image:url("../images/germans_bg.png");
+}
+
+.factionpage.faction-soviets {
+    background-image:url("../images/soviets_bg.png");
+}
+
+.ladder-header > * {
+    font-weight:bold;
+    font-size:0.8em;
+}
+
+.ladder-row {
+	background-color:rgba(184, 205, 236, 0.5);
+    margin: 0.1em 0 0 0;
+    border: 1px solid rgb(141, 152, 156);
+    border-left:none;
+    border-right:none;
+}
+
+.ladder-cell {
+    padding: 0.4em;
+    text-align:center;
+    overflow:hidden;
+}
+
+.ladder-cell div {
+    overflow:hidden;
+}
+
+.ladder-cell.player {
+    text-align: left;
+}
+
+.ladder-cell.player div,
+.ladder-header .ladder-cell.streak div,
+.ladder-header .ladder-cell.drops div,
+.ladder-header .ladder-cell.disputes div {
+    text-overflow:ellipsis;
+}
+
+.ladder-cell.streak.positive {
+    color:green;
+}
+
+.ladder-cell.streak.negative {
+    color:red;
+}
+
+.bottom-toolbar {
+    font-size: 0.6em;
+}
+
+.bottom-toolbar img {
+    vertical-align: middle;
+}
+
+.player-view .player-avatar, .player-view .player-level-image {
+    width: 140px;
+    height: 140px;
+    margin: 10px;
+}

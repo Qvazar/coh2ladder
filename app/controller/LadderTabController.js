@@ -16,56 +16,93 @@
 Ext.define('Coh2Ladder.controller.LadderTabController', {
     extend: 'Ext.app.Controller',
 
+    requires: [
+        'Ext.data.Store'
+    ],
+
     config: {
+        gameModeStore: {
+            model: 'Coh2Ladder.model.GameMode',
+            sorters: 'name'
+        },
+        factionStore: {
+            model: 'Coh2Ladder.model.Faction',
+            sorters: 'name'
+        },
+        playerStore: {
+            model: 'Coh2Ladder.model.Player'
+        },
+        activeGameModeIndex: 0,
+
+        routes: {
+            'ladder/:gameMode/:faction': 'showLadderGameModeAndFaction'
+        },
+
         refs: {
             ladderStack: '#ladderStack',
-            gameModeButtons: '#gameModeButtons'
+            gameModeButtons: '#gameModeButtons',
+            ladderTabView: 'laddertabview'
         },
 
         control: {
             "laddertabview #gameModeButtons button": {
                 tap: 'onGameModeButtonTap'
+            },
+            "laddercarousel": {
+                activeitemchange: 'onFactionChange'
             }
         }
     },
 
     onGameModeButtonTap: function(button, e, eOpts) {
-        var index = this.getGameModeButtons().getItems().indexOf(button),
-            ladderStack = this.getLadderStack(),
-            currentIndex = ladderStack.getItems().indexOf(ladderStack.getActiveItem()),
-            animateDirection = index > currentIndex ? 'left' : 'right';
+        var gameModeId = button.config.gameModeId,
+            gameModeName = this.getGameModeStore().findRecord('id', gameModeId).get('name'),
+            factionId = this.activeGameModeFactions[gameModeId],
+            factionName = this.getFactionStore().findRecord('id', factionId).get('name');
 
-        ladderStack.animateActiveItem(index, {
-            type: 'flip',
-            direction: animateDirection
-        });
+        this.redirectTo('ladder/' + gameModeName + '/' + factionName);
+    },
 
+    onFactionChange: function(container, value, oldValue, eOpts) {
+        var gameModeId = container.getGameModeId(),
+            factionId = value.getFactionId(),
+            gameModeName = this.getGameModeStore().findRecord('id', gameModeId).get('name'),
+            factionName = this.getFactionStore().findRecord('id', factionId).get('name');
+
+        this.activeGameModeFactions[gameModeId] = factionId;
+
+        this.getApplication().getHistory().add({
+            url: 'ladder/' + gameModeName + '/' + factionName
+        }, /* silent */ true);
+    },
+
+    applyFactionStore: function(config) {
+        return this.createStore(config);
+    },
+
+    applyGameModeStore: function(config) {
+        return this.createStore(config);
+    },
+
+    applyPlayerStore: function(config) {
+        return this.createStore(config);
     },
 
     launch: function() {
-        this.gameModeStore = Ext.create('Ext.data.Store', {
-            model: 'Coh2Ladder.model.GameMode',
-            sorters: 'name'
-        });
 
-        this.factionStore = Ext.create('Ext.data.Store', {
-            model: 'Coh2Ladder.model.Faction',
-            sorters: 'name'
-        });
-
-        this.playerStore = Ext.create('Ext.data.Store', {
-            model: 'Coh2Ladder.model.Player'
-        });
         // Need to load here to correctly load the data, as the first record loaded through associations is wrong..
-        this.playerStore.load();
+        this.getPlayerStore().load();
 
         var gameModeButtons = this.getGameModeButtons(),
-            ladderStack = this.getLadderStack();
+            ladderStack = this.getLadderStack(),
+            activeGameModeFactions = {};
+
+        this.activeGameModeFactions = activeGameModeFactions;
 
         gameModeButtons.removeAll(true);
 
-        this.gameModeStore.load(function(gameModes) {
-            this.factionStore.load(function(factions) {
+        this.getGameModeStore().load(function(gameModes) {
+            this.getFactionStore().load(function(factions) {
 
                 gameModes.forEach(function(gameMode, gmIndex) {
 
@@ -74,7 +111,8 @@ Ext.define('Coh2Ladder.controller.LadderTabController', {
 
                     gameModeButtons.add({
                         xtype: 'button',
-                        text: name
+                        text: name,
+                        gameModeId: gameModeId
                     });
 
                     ladderStack.add({
@@ -85,8 +123,12 @@ Ext.define('Coh2Ladder.controller.LadderTabController', {
 
                             var items = [];
 
-                            factions.forEach(function(faction) {
+                            factions.forEach(function(faction, index) {
                                 var factionId = faction.get('id');
+
+                                if (!activeGameModeFactions[gameModeId]) {
+                                    activeGameModeFactions[gameModeId] = factionId;
+                                }
 
                                 items.push({
                                     xtype: 'ladderpage',
@@ -105,6 +147,35 @@ Ext.define('Coh2Ladder.controller.LadderTabController', {
 
             }, this);
         }, this);
+    },
+
+    createStore: function(storeConfig) {
+        return Ext.create('Ext.data.Store', storeConfig);
+    },
+
+    showLadderGameModeAndFaction: function(gameMode, faction) {
+        var switchFaction = !!faction,
+            gameModeIndex = this.getGameModeStore().find('name', gameMode),
+            ladderStack = this.getLadderStack(),
+            gameModePage = ladderStack.getItems().getAt(gameModeIndex),
+            currentGameModeIndex = ladderStack.getItems().indexOf(ladderStack.getActiveItem()),
+            animateDirection = gameModeIndex < currentGameModeIndex ? 'right' : 'left';
+
+        this.getGameModeButtons().setPressedButtons([ gameModeIndex ]);
+
+        if (switchFaction) {
+            var factionIndex = this.getFactionStore().find('name', faction);
+
+            gameModePage.setActiveItem(factionIndex);
+        }
+
+        ladderStack.animateActiveItem(gameModeIndex, {
+            type: 'flip',
+            direction: animateDirection
+        });
+
+
+        this.getLadderTabView().show();
     }
 
 });

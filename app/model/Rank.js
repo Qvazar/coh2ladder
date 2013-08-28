@@ -66,7 +66,6 @@ Ext.define('Coh2Ladder.model.Rank', {
                 model: 'Coh2Ladder.model.Faction'
             },
             {
-                associationKey: 'gamemode_id',
                 model: 'Coh2Ladder.model.GameMode'
             }
         ],

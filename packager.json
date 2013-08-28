@@ -60,14 +60,6 @@
     "outputPath": "../build/",
 
     /**
-     * @cfg {String} configuration
-     * 
-     * This is configuration for your application. `Debug` should always be used unless you are submitting your app to an online
-     * store - in which case `Release` should be specified.
-     */
-    "configuration": "Release",
-
-    /**
      * @cfg {String} platform
      * 
      * This is the platform where you will be running your application.
