@@ -141,6 +141,14 @@
                 "app/view/DataProviderToolbar.js"
             ],
             "className": "DataProviderToolbar"
+        },
+        "989bd9f1-1ba4-40e1-a83a-5af207001903": {
+            "paths": [
+                "metadata/view/PlayerSearchView",
+                "app/view/override/PlayerSearchView.js",
+                "app/view/PlayerSearchView.js"
+            ],
+            "className": "PlayerSearchView"
         }
     },
     "viewOrderMap": {
@@ -151,7 +159,8 @@
             "d645035a-b2fb-4787-ac59-4340870cfb12",
             "8ee69461-7ece-404a-b7d1-5bfed18d2fbe",
             "659e610b-ea9f-436a-887e-0374d580707c",
-            "3ad548bd-0007-4803-8da1-ac33b738be98"
+            "3ad548bd-0007-4803-8da1-ac33b738be98",
+            "989bd9f1-1ba4-40e1-a83a-5af207001903"
         ],
         "store": [
             "103800c4-af10-403a-95f8-08edee3c6211"

@@ -25,7 +25,7 @@ Ext.define('Coh2Ladder.view.PlayerToolbarSegment', {
         items: [
             {
                 xtype: 'button',
-                itemId: 'searchButton',
+                itemId: 'playerSearchButton',
                 ui: 'plain',
                 iconCls: 'search'
             },

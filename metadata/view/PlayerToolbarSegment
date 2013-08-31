@@ -21,7 +21,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "searchButton",
+                "itemId": "playerSearchButton",
                 "ui": "plain",
                 "width": null,
                 "iconAlign": null,

@@ -17,15 +17,39 @@ Ext.define('Coh2Ladder.controller.MainController', {
     extend: 'Ext.app.Controller',
 
     config: {
+        refs: {
+            playerSearchView: {
+                autoCreate: true,
+                selector: 'playersearchview',
+                xtype: 'playersearchview'
+            },
+            playerSearchText: 'playersearchview #playerSearchTextField'
+        },
+
         control: {
             "#coh2org-logo": {
                 tap: 'openCoh2Org'
+            },
+            "playertoolbarsegment #playerSearchButton": {
+                tap: 'onSearchButtonTap'
+            },
+            "playersearchview #playerSearchTextField": {
+                action: 'onPlayerSearchAction'
             }
         }
     },
 
     openCoh2Org: function(image, e, eOpts) {
         Ext.device.Device.openURL('http://www.coh2.org/');
+    },
+
+    onSearchButtonTap: function(button, e, eOpts) {
+        this.getPlayerSearchView().showBy(button);
+        this.getPlayerSearchText().focus();
+    },
+
+    onPlayerSearchAction: function(textfield, e, eOpts) {
+        this.getPlayerSearchView().hide();
     }
 
 });

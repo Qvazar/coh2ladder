@@ -1,0 +1,36 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "hideAnimation": null,
+        "showAnimation": null,
+        "designer|userClassName": "PlayerSearchView",
+        "designer|userAlias": "playersearchview",
+        "hideOnMaskTap": true,
+        "layout": null,
+        "modal": true
+    },
+    "designerId": "989bd9f1-1ba4-40e1-a83a-5af207001903",
+    "cn": [
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "playerSearchTextField",
+                "minWidth": "260px",
+                "label": null,
+                "placeHolder": "Steam name or ID",
+                "ui": null
+            },
+            "designerId": "fd2d9425-23ad-41e1-b48b-30b1544334d2"
+        }
+    ]
+}

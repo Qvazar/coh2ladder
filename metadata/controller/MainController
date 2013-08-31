@@ -20,14 +20,78 @@
             "userConfig": {
                 "fn": "openCoh2Org",
                 "implHandler": [
-                    "debugger;",
-                    "Ext.device.Device.openURL('http://www.coh2.org');"
+                    "Ext.device.Device.openURL('http://www.coh2.org/');"
                 ],
                 "name": "tap",
                 "designer|targetType": "Ext.Img",
                 "designer|controlQuery": "#coh2org-logo"
             },
             "designerId": "50667b18-b297-4b4d-a439-14575a47b390"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSearchButtonTap",
+                "implHandler": [
+                    "this.getPlayerSearchView().showBy(button);",
+                    "this.getPlayerSearchText().focus();"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "playertoolbarsegment #playerSearchButton"
+            },
+            "designerId": "fc6a8edc-3a17-49d0-b2c6-35fba89f5361"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "playerSearchView",
+                "selector": "playersearchview",
+                "xtype": "playersearchview"
+            },
+            "designerId": "332e8f04-6930-43dd-b4d5-641cadeab9ec"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "playerSearchText",
+                "selector": "playersearchview #playerSearchTextField"
+            },
+            "designerId": "bbf260b6-f683-4856-a68f-f0caca19debb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPlayerSearchAction",
+                "implHandler": [
+                    "this.getPlayerSearchView().hide();"
+                ],
+                "name": "action",
+                "designer|targetType": "Ext.field.Text",
+                "designer|controlQuery": "playersearchview #playerSearchTextField"
+            },
+            "designerId": "9e50ff49-2c6a-47f9-9c7f-cb8b02bb3495"
         }
     ]
 }

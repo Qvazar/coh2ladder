@@ -46,7 +46,8 @@ Ext.application({
         'LadderPage',
         'PlayerView',
         'PlayerToolbarSegment',
-        'DataProviderToolbar'
+        'DataProviderToolbar',
+        'PlayerSearchView'
     ],
     controllers: [
         'LadderTabController',
