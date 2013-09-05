@@ -1,0 +1,271 @@
+[
+    {
+        player_id: 'player-0',
+        faction_id: 'faction-germans',
+        gamemode_id: 'gamemode-1v1',
+        rank: 2,
+        wins:98,
+        losses: 90,
+        streak: -1,
+        drops: 0,
+        disputes: 2
+    },
+    {
+        player_id: 'player-1',
+        faction_id: 'faction-germans',
+        gamemode_id: 'gamemode-1v1',
+        rank: 3,
+        wins:94,
+        losses: 79,
+        streak: 5,
+        drops: 0,
+        disputes: 1
+    },
+    {
+        player_id: 'player-2',
+        faction_id: 'faction-germans',
+        gamemode_id: 'gamemode-1v1',
+        rank: 1,
+        wins:120,
+        losses: 90,
+        streak: 10,
+        drops: 0,
+        disputes: 3
+    },
+    {
+        player_id: 'player-0',
+        faction_id: 'faction-soviets',
+        gamemode_id: 'gamemode-1v1',
+        rank: 1,
+        wins:98,
+        losses: 90,
+        streak: -1,
+        drops: 0,
+        disputes: 2
+    },
+    {
+        player_id: 'player-1',
+        faction_id: 'faction-soviets',
+        gamemode_id: 'gamemode-1v1',
+        rank: 2,
+        wins:94,
+        losses: 79,
+        streak: 5,
+        drops: 0,
+        disputes: 1
+    },
+    {
+        player_id: 'player-2',
+        faction_id: 'faction-soviets',
+        gamemode_id: 'gamemode-1v1',
+        rank: 3,
+        wins:120,
+        losses: 90,
+        streak: 10,
+        drops: 0,
+        disputes: 3
+    },
+
+
+    {
+        player_id: 'player-0',
+        faction_id: 'faction-germans',
+        gamemode_id: 'gamemode-2v2',
+        rank: 2,
+        wins:98,
+        losses: 90,
+        streak: -1,
+        drops: 0,
+        disputes: 2
+    },
+    {
+        player_id: 'player-1',
+        faction_id: 'faction-germans',
+        gamemode_id: 'gamemode-2v2',
+        rank: 3,
+        wins:94,
+        losses: 79,
+        streak: 5,
+        drops: 0,
+        disputes: 1
+    },
+    {
+        player_id: 'player-2',
+        faction_id: 'faction-germans',
+        gamemode_id: 'gamemode-2v2',
+        rank: 1,
+        wins:120,
+        losses: 90,
+        streak: 10,
+        drops: 0,
+        disputes: 3
+    },
+    {
+        player_id: 'player-0',
+        faction_id: 'faction-soviets',
+        gamemode_id: 'gamemode-2v2',
+        rank: 2,
+        wins:98,
+        losses: 90,
+        streak: -1,
+        drops: 0,
+        disputes: 2
+    },
+    {
+        player_id: 'player-1',
+        faction_id: 'faction-soviets',
+        gamemode_id: 'gamemode-2v2',
+        rank: 3,
+        wins:94,
+        losses: 79,
+        streak: 5,
+        drops: 0,
+        disputes: 1
+    },
+    {
+        player_id: 'player-2',
+        faction_id: 'faction-soviets',
+        gamemode_id: 'gamemode-2v2',
+        rank: 1,
+        wins:120,
+        losses: 90,
+        streak: 10,
+        drops: 0,
+        disputes: 3
+    },
+
+
+    {
+        player_id: 'player-0',
+        faction_id: 'faction-germans',
+        gamemode_id: 'gamemode-3v3',
+        rank: 1,
+        wins:98,
+        losses: 90,
+        streak: -1,
+        drops: 0,
+        disputes: 2
+    },
+    {
+        player_id: 'player-1',
+        faction_id: 'faction-germans',
+        gamemode_id: 'gamemode-3v3',
+        rank: 2,
+        wins:94,
+        losses: 79,
+        streak: 5,
+        drops: 0,
+        disputes: 1
+    },
+    {
+        player_id: 'player-2',
+        faction_id: 'faction-germans',
+        gamemode_id: 'gamemode-3v3',
+        rank: 3,
+        wins:120,
+        losses: 90,
+        streak: 10,
+        drops: 0,
+        disputes: 3
+    },
+    {
+        player_id: 'player-0',
+        faction_id: 'faction-soviets',
+        gamemode_id: 'gamemode-3v3',
+        rank: 1,
+        wins:98,
+        losses: 90,
+        streak: -1,
+        drops: 0,
+        disputes: 2
+    },
+    {
+        player_id: 'player-1',
+        faction_id: 'faction-soviets',
+        gamemode_id: 'gamemode-3v3',
+        rank: 3,
+        wins:94,
+        losses: 79,
+        streak: 5,
+        drops: 0,
+        disputes: 1
+    },
+    {
+        player_id: 'player-2',
+        faction_id: 'faction-soviets',
+        gamemode_id: 'gamemode-3v3',
+        rank: 2,
+        wins:120,
+        losses: 90,
+        streak: 10,
+        drops: 0,
+        disputes: 3
+    },
+
+    {
+        player_id: 'player-0',
+        faction_id: 'faction-germans',
+        gamemode_id: 'gamemode-4v4',
+        rank: 2,
+        wins:98,
+        losses: 90,
+        streak: -1,
+        drops: 0,
+        disputes: 2
+    },
+    {
+        player_id: 'player-1',
+        faction_id: 'faction-germans',
+        gamemode_id: 'gamemode-4v4',
+        rank: 3,
+        wins:94,
+        losses: 79,
+        streak: 5,
+        drops: 0,
+        disputes: 1
+    },
+    {
+        player_id: 'player-2',
+        faction_id: 'faction-germans',
+        gamemode_id: 'gamemode-4v4',
+        rank: 1,
+        wins:120,
+        losses: 90,
+        streak: 10,
+        drops: 0,
+        disputes: 3
+    },
+    {
+        player_id: 'player-0',
+        faction_id: 'faction-soviets',
+        gamemode_id: 'gamemode-4v4',
+        rank: 2,
+        wins:98,
+        losses: 90,
+        streak: -1,
+        drops: 0,
+        disputes: 2
+    },
+    {
+        player_id: 'player-1',
+        faction_id: 'faction-soviets',
+        gamemode_id: 'gamemode-4v4',
+        rank: 3,
+        wins:94,
+        losses: 79,
+        streak: 5,
+        drops: 0,
+        disputes: 1
+    },
+    {
+        player_id: 'player-2',
+        faction_id: 'faction-soviets',
+        gamemode_id: 'gamemode-4v4',
+        rank: 1,
+        wins:120,
+        losses: 90,
+        streak: 10,
+        drops: 0,
+        disputes: 3
+    }
+]

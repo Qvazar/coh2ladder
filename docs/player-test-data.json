@@ -1,0 +1,26 @@
+[
+    {
+        id: 'player-0',
+        name: 'Qvazar',
+        steam_avatar_url: 'http://media.steampowered.com/steamcommunity/public/images/avatars/e6/e67d1e9ca8a6399421f7f04fd279e33d5bb850f2_full.jpg',
+        steam_profile_url: 'http://steamcommunity.com/profiles/76561198038741197/',
+        level: 74,
+        experience: 2624093
+    },
+    {
+        id: 'player-1',
+        name: 'AmiPolizeiFunk',
+        steam_avatar_url: 'http://media.steampowered.com/steamcommunity/public/images/avatars/96/967ec7de5b0cc44723fc349f8452b3c46537c165_full.jpg',
+        steam_profile_url: 'http://steamcommunity.com/profiles/76561197993926044/',
+        level: 54,
+        experience: 1224093
+    },
+    {
+        id: 'player-2',
+        name: 'Sepha',
+        steam_avatar_url: 'http://media.steampowered.com/steamcommunity/public/images/avatars/b0/b054576a4d67fc1e49739c435bbf3b7790043c38_full.jpg',
+        steam_profile_url: 'http://steamcommunity.com/profiles/76561198002889232',
+        level: 56,
+        experience: 1624093
+    }
+]

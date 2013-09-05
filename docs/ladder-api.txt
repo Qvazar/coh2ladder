@@ -1,0 +1,5 @@
+coh2.org/ladders/api?key=coh2org832adfeb&faction=<FACTIONID>&gametype=<GAMETYPEID>&sortby=<SORTID>
+17:31 - Inverse: factionid is 0 for ostheer 1 for soviets
+17:31 - Inverse: gametypeid is 1-4 for 1v1-4v4
+17:32 - Inverse: sortby is 0 for ranking 1 for wins
+
