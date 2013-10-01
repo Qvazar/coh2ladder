@@ -57,6 +57,16 @@ Ext.define('Coh2Ladder.model.Rank', {
                 type: 'int'
             },
             {
+                name: 'percentage',
+                type: 'float',
+                convert: function(v, rec) {
+                    var wins = rec.get('wins'),
+                        losses = rec.get('losses');
+
+                    return (wins / (wins + losses)).toFixed(1);
+                }
+            },
+            {
                 mapping: 'stat.streak',
                 name: 'streak',
                 type: 'int'

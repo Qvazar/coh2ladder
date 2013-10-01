@@ -65,6 +65,10 @@ $base-color: #bbb;
     /*background-color: white;*/
 }
 
+.factionpage .x-list {
+    background-color:transparent;
+}
+
 .factionpage.faction-0 {
     background-image:url("../images/germans_bg.png");
 }
@@ -86,19 +90,30 @@ $base-color: #bbb;
     border-right:none;
 }
 
+$columnWidth: percentage(1/11);
+$columnPlayerWidth: percentage(3/11);
+
 .ladder-cell {
-    padding: 0.4em;
     text-align:center;
     overflow:hidden;
     white-space: nowrap;
+    width:$columnWidth;
 }
 
-.ladder-cell div {
+span.ladder-cell {
+    display:inline-block;
     overflow:hidden;
+}
+
+.ladder-cell.xp {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .ladder-cell.player {
     text-align: left;
+    width:$columnPlayerWidth;
 }
 
 .ladder-cell.player div,
