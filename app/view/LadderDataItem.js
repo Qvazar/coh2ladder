@@ -212,29 +212,28 @@ Ext.define('Coh2Ladder.view.LadderDataItem', {
     },
 
     updateRecord: function(record) {
-        record.getPlayer(function(player) {
-            var cmp = Ext.bind(this.getComponent, this);
+        var player = record.players().first();
+        var cmp = Ext.bind(this.getComponent, this);
 
-            var wins = record.get('wins'),
-                losses = record.get('losses'),
-                total = wins + losses,
-                percentage = (wins / total * 100).toFixed(1),
-                streak = record.get('streak'),
-                streakCls = streak > 0 ? 'positive' : 'negative';
+        var wins = record.get('wins'),
+            losses = record.get('losses'),
+            total = wins + losses,
+            percentage = (wins / total * 100).toFixed(1),
+            streak = record.get('streak'),
+            streakCls = streak > 0 ? 'positive' : 'negative';
 
-            streak = (streak > 0) ? ('+' + streak) : streak;
+        streak = (streak > 0) ? ('+' + streak) : streak;
 
-            cmp('rank').setHtml(record.get('rank'));
-            cmp('xp').setSrc('resources/images/levels/' + this.getLevelImages()[player.get('level')]);
-            cmp('playerName').setHtml('<div>' + player.get('name') + '</div>');
-            cmp('wins').setHtml(wins);
-            cmp('losses').setHtml(losses);
-            cmp('percentage').setHtml(percentage);
-            cmp('streak').replaceCls(['positive', 'negative'], streakCls);
-            cmp('streak').setHtml(streak);
-            cmp('drops').setHtml(record.get('drops'));
-            cmp('disputes').setHtml(record.get('disputes'));
-        }, this);
+        cmp('rank').setHtml(record.get('rank'));
+        cmp('xp').setSrc('resources/images/levels/' + this.getLevelImages()[player.get('level')]);
+        cmp('playerName').setHtml('<div>' + player.get('name') + '</div>');
+        cmp('wins').setHtml(wins);
+        cmp('losses').setHtml(losses);
+        cmp('percentage').setHtml(percentage);
+        cmp('streak').replaceCls(['positive', 'negative'], streakCls);
+        cmp('streak').setHtml(streak);
+        cmp('drops').setHtml(record.get('drops'));
+        cmp('disputes').setHtml(record.get('disputes'));
     }
 
 });

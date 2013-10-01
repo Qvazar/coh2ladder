@@ -19,7 +19,7 @@ Ext.define('Coh2Ladder.view.LadderPage', {
 
     requires: [
         'Coh2Ladder.view.LadderDataItem',
-        'Ext.dataview.DataView'
+        'Ext.grid.infinite.Grid'
     ],
 
     config: {
@@ -31,17 +31,182 @@ Ext.define('Coh2Ladder.view.LadderPage', {
         },
         items: [
             {
-                xtype: 'dataview',
+                xtype: 'grid',
                 itemId: 'dataView',
                 scrollable: {
                     direction: 'vertical',
                     directionLock: true
                 },
                 disableSelection: true,
-                defaultType: 'ladderdataitem',
+                //defaultType: 'ladderdataitem',
                 store: 'emptystore',
-                useComponents: true
+                //useComponents: true,
+                //infinite:true,
+                //itemTpl: "",
+                columns: {
+                    defaults: {
+                        flex: 1
+                    },
+                    items: [
+                        {
+                            text:'#',
+                            dataIndex:'rank',
+                            cls: ['ladder-cell', 'rank']
+                        },
+                        {
+                            text:'XP',
+                            dataIndex:'level',
+                            cls: ['ladder-cell', 'xp'],
+                            renderer: function(value, record) {
+                                return ['<img src="resources/images/levels/',
+                                        this.getLevelImages()[value],
+                                        '"/>'
+                                        ].join('');
+                            }
+                        },
+                        {
+                            text:'Steam alias',
+                            dataIndex:'name',
+                            flex: 3,
+                            cls: ['ladder-cell', 'player']
+                        },
+                        {
+                            text:'W',
+                            dataIndex:'wins',
+                            cls: ['ladder-cell', 'wins']
+                        },
+                        {
+                            text:'L',
+                            dataIndex:'losses',
+                            cls: ['ladder-cell', 'losses']
+                        },
+                        {
+                            text:'%',
+                            dataIndex:'percentage',
+                            cls: ['ladder-cell', 'percentage']
+                        },
+                        {
+                            text:'Streak',
+                            dataIndex:'streak',
+                            cls: ['ladder-cell', 'streak']
+                        },
+                        {
+                            text:'Drops',
+                            dataIndex:'drops',
+                            cls: ['ladder-cell', 'drops']
+                        },
+                        {
+                            text:'Disputes',
+                            dataIndex:'disputes',
+                            cls: ['ladder-cell', 'disputes']
+                        }
+                    ]
+                }
             }
+        ],
+
+        levelImages: [
+            'rank_01_private_class_1.png',
+            'rank_01_private_class_2.png',
+            'rank_01_private_class_3.png',
+            'rank_01_private_class_4.png',
+            'rank_01_private.png',
+            'rank_02_senior_private_class_1.png',
+            'rank_02_senior_private_class_2.png',
+            'rank_02_senior_private_class_3.png',
+            'rank_02_senior_private_class_4.png',
+            'rank_02_senior_private.png',
+            'rank_03_corporal_class_1.png',
+            'rank_03_corporal_class_2.png',
+            'rank_03_corporal_class_3.png',
+            'rank_03_corporal_class_4.png',
+            'rank_03_corporal.png',
+            'rank_04_senior_corporal_class_1.png',
+            'rank_04_senior_corporal_class_2.png',
+            'rank_04_senior_corporal_class_3.png',
+            'rank_04_senior_corporal_class_4.png',
+            'rank_04_senior_corporal.png',
+            'rank_05_junior_sergeant_class_1.png',
+            'rank_05_junior_sergeant_class_2.png',
+            'rank_05_junior_sergeant_class_3.png',
+            'rank_05_junior_sergeant_class_4.png',
+            'rank_05_junior_sergeant.png',
+            'rank_06_sergeant_class_1.png',
+            'rank_06_sergeant_class_2.png',
+            'rank_06_sergeant_class_3.png',
+            'rank_06_sergeant_class_4.png',
+            'rank_06_sergeant.png',
+            'rank_07_senior_sergeant_class_1.png',
+            'rank_07_senior_sergeant_class_2.png',
+            'rank_07_senior_sergeant_class_3.png',
+            'rank_07_senior_sergeant_class_4.png',
+            'rank_07_senior_sergeant.png',
+            'rank_08_master_sergeant_class_1.png',
+            'rank_08_master_sergeant_class_2.png',
+            'rank_08_master_sergeant_class_3.png',
+            'rank_08_master_sergeant_class_4.png',
+            'rank_08_master_sergeant.png',
+            'rank_09_sergeant_major_class_1.png',
+            'rank_09_sergeant_major_class_2.png',
+            'rank_09_sergeant_major_class_3.png',
+            'rank_09_sergeant_major_class_4.png',
+            'rank_09_sergeant_major.png',
+            'rank_10_warrant_officer_class_1.png',
+            'rank_10_warrant_officer_class_2.png',
+            'rank_10_warrant_officer_class_3.png',
+            'rank_10_warrant_officer_class_4.png',
+            'rank_10_warrant_officer.png',
+            'rank_11_senior_warrant_officer_class_1.png',
+            'rank_11_senior_warrant_officer_class_2.png',
+            'rank_11_senior_warrant_officer_class_3.png',
+            'rank_11_senior_warrant_officer_class_4.png',
+            'rank_11_senior_warrant_officer.png',
+            'rank_12_junior_lieutenant_class_1.png',
+            'rank_12_junior_lieutenant_class_2.png',
+            'rank_12_junior_lieutenant_class_3.png',
+            'rank_12_junior_lieutenant_class_4.png',
+            'rank_12_junior_lieutenant.png',
+            'rank_13_lieutenant_class_1.png',
+            'rank_13_lieutenant_class_2.png',
+            'rank_13_lieutenant_class_3.png',
+            'rank_13_lieutenant_class_4.png',
+            'rank_13_lieutenant.png',
+            'rank_14_senior_lieutenant_class_1.png',
+            'rank_14_senior_lieutenant_class_2.png',
+            'rank_14_senior_lieutenant_class_3.png',
+            'rank_14_senior_lieutenant_class_4.png',
+            'rank_14_senior_lieutenant.png',
+            'rank_15_captain_class_1.png',
+            'rank_15_captain_class_2.png',
+            'rank_15_captain_class_3.png',
+            'rank_15_captain_class_4.png',
+            'rank_15_captain.png',
+            'rank_16_senior_captain_class_1.png',
+            'rank_16_senior_captain_class_2.png',
+            'rank_16_senior_captain_class_3.png',
+            'rank_16_senior_captain_class_4.png',
+            'rank_16_senior_captain.png',
+            'rank_17_major_class_1.png',
+            'rank_17_major_class_2.png',
+            'rank_17_major_class_3.png',
+            'rank_17_major_class_4.png',
+            'rank_17_major.png',
+            'rank_18_lieutenant_colonel_class_1.png',
+            'rank_18_lieutenant_colonel_class_2.png',
+            'rank_18_lieutenant_colonel_class_3.png',
+            'rank_18_lieutenant_colonel_class_4.png',
+            'rank_18_lieutenant_colonel.png',
+            'rank_19_colonel_class_1.png',
+            'rank_19_colonel_class_2.png',
+            'rank_19_colonel_class_3.png',
+            'rank_19_colonel_class_4.png',
+            'rank_19_colonel.png',
+            'rank_20_brigadier_general_class_1.png',
+            'rank_20_brigadier_general_class_2.png',
+            'rank_20_brigadier_general_class_3.png',
+            'rank_20_brigadier_general_class_4.png',
+            'rank_20_brigadier_general.png',
+            'rank_21_major_general.png'
         ]
     },
 
@@ -80,6 +245,7 @@ Ext.define('Coh2Ladder.view.LadderPage', {
         }
         ]);
 
+        //debugger;
         store.load();
 
         //dataView.refresh();

@@ -17,50 +17,61 @@ Ext.define('Coh2Ladder.model.Rank', {
     extend: 'Ext.data.Model',
 
     uses: [
-        'Coh2Ladder.model.Player',
         'Coh2Ladder.model.Faction',
-        'Coh2Ladder.model.GameMode'
+        'Coh2Ladder.model.GameMode',
+        'Coh2Ladder.model.Player'
     ],
 
     config: {
         fields: [
             {
-                name: 'player_id'
+                name: 'id'
             },
             {
+                convert: function(v, rec) {
+                    return 'faction-' + v;
+                },
+                mapping: 'stat.raceID',
                 name: 'faction_id'
             },
             {
+                convert: function(v, rec) {
+                    return 'gamemode-' + v;
+                },
+                mapping: 'stat.matchTypeID',
                 name: 'gamemode_id'
             },
             {
+                mapping: 'stat.ranking',
                 name: 'rank',
                 type: 'int'
             },
             {
+                mapping: 'stat.wins',
                 name: 'wins',
                 type: 'int'
             },
             {
+                mapping: 'stat.losses',
                 name: 'losses',
                 type: 'int'
             },
             {
+                mapping: 'stat.streak',
                 name: 'streak',
                 type: 'int'
             },
             {
+                mapping: 'stat.drops',
                 name: 'drops',
                 type: 'int'
             },
             {
+                mapping: 'stat.disputes',
                 name: 'disputes',
                 type: 'int'
             }
         ],
-        belongsTo: {
-            model: 'Coh2Ladder.model.Player'
-        },
         hasOne: [
             {
                 model: 'Coh2Ladder.model.Faction'
@@ -69,277 +80,28 @@ Ext.define('Coh2Ladder.model.Rank', {
                 model: 'Coh2Ladder.model.GameMode'
             }
         ],
+        hasMany: {
+            associationKey: 'statGroup.members',
+            model: 'Coh2Ladder.model.Player'
+        },
         proxy: {
-            type: 'memory',
-            data: [
-                {
-                    player_id: 'player-0',
-                    faction_id: 'faction-germans',
-                    gamemode_id: 'gamemode-1v1',
-                    rank: 2,
-                    wins: 98,
-                    losses: 90,
-                    streak: -1,
-                    drops: 0,
-                    disputes: 2
-                },
-                {
-                    player_id: 'player-1',
-                    faction_id: 'faction-germans',
-                    gamemode_id: 'gamemode-1v1',
-                    rank: 3,
-                    wins: 94,
-                    losses: 79,
-                    streak: 5,
-                    drops: 0,
-                    disputes: 1
-                },
-                {
-                    player_id: 'player-2',
-                    faction_id: 'faction-germans',
-                    gamemode_id: 'gamemode-1v1',
-                    rank: 1,
-                    wins: 120,
-                    losses: 90,
-                    streak: 10,
-                    drops: 0,
-                    disputes: 3
-                },
-                {
-                    player_id: 'player-0',
-                    faction_id: 'faction-soviets',
-                    gamemode_id: 'gamemode-1v1',
-                    rank: 1,
-                    wins: 98,
-                    losses: 90,
-                    streak: -1,
-                    drops: 0,
-                    disputes: 2
-                },
-                {
-                    player_id: 'player-1',
-                    faction_id: 'faction-soviets',
-                    gamemode_id: 'gamemode-1v1',
-                    rank: 2,
-                    wins: 94,
-                    losses: 79,
-                    streak: 5,
-                    drops: 0,
-                    disputes: 1
-                },
-                {
-                    player_id: 'player-2',
-                    faction_id: 'faction-soviets',
-                    gamemode_id: 'gamemode-1v1',
-                    rank: 3,
-                    wins: 120,
-                    losses: 90,
-                    streak: 10,
-                    drops: 0,
-                    disputes: 3
-                },
-                {
-                    player_id: 'player-0',
-                    faction_id: 'faction-germans',
-                    gamemode_id: 'gamemode-2v2',
-                    rank: 2,
-                    wins: 98,
-                    losses: 90,
-                    streak: -1,
-                    drops: 0,
-                    disputes: 2
-                },
-                {
-                    player_id: 'player-1',
-                    faction_id: 'faction-germans',
-                    gamemode_id: 'gamemode-2v2',
-                    rank: 3,
-                    wins: 94,
-                    losses: 79,
-                    streak: 5,
-                    drops: 0,
-                    disputes: 1
-                },
-                {
-                    player_id: 'player-2',
-                    faction_id: 'faction-germans',
-                    gamemode_id: 'gamemode-2v2',
-                    rank: 1,
-                    wins: 120,
-                    losses: 90,
-                    streak: 10,
-                    drops: 0,
-                    disputes: 3
-                },
-                {
-                    player_id: 'player-0',
-                    faction_id: 'faction-soviets',
-                    gamemode_id: 'gamemode-2v2',
-                    rank: 2,
-                    wins: 98,
-                    losses: 90,
-                    streak: -1,
-                    drops: 0,
-                    disputes: 2
-                },
-                {
-                    player_id: 'player-1',
-                    faction_id: 'faction-soviets',
-                    gamemode_id: 'gamemode-2v2',
-                    rank: 3,
-                    wins: 94,
-                    losses: 79,
-                    streak: 5,
-                    drops: 0,
-                    disputes: 1
-                },
-                {
-                    player_id: 'player-2',
-                    faction_id: 'faction-soviets',
-                    gamemode_id: 'gamemode-2v2',
-                    rank: 1,
-                    wins: 120,
-                    losses: 90,
-                    streak: 10,
-                    drops: 0,
-                    disputes: 3
-                },
-                {
-                    player_id: 'player-0',
-                    faction_id: 'faction-germans',
-                    gamemode_id: 'gamemode-3v3',
-                    rank: 1,
-                    wins: 98,
-                    losses: 90,
-                    streak: -1,
-                    drops: 0,
-                    disputes: 2
-                },
-                {
-                    player_id: 'player-1',
-                    faction_id: 'faction-germans',
-                    gamemode_id: 'gamemode-3v3',
-                    rank: 2,
-                    wins: 94,
-                    losses: 79,
-                    streak: 5,
-                    drops: 0,
-                    disputes: 1
-                },
-                {
-                    player_id: 'player-2',
-                    faction_id: 'faction-germans',
-                    gamemode_id: 'gamemode-3v3',
-                    rank: 3,
-                    wins: 120,
-                    losses: 90,
-                    streak: 10,
-                    drops: 0,
-                    disputes: 3
-                },
-                {
-                    player_id: 'player-0',
-                    faction_id: 'faction-soviets',
-                    gamemode_id: 'gamemode-3v3',
-                    rank: 1,
-                    wins: 98,
-                    losses: 90,
-                    streak: -1,
-                    drops: 0,
-                    disputes: 2
-                },
-                {
-                    player_id: 'player-1',
-                    faction_id: 'faction-soviets',
-                    gamemode_id: 'gamemode-3v3',
-                    rank: 3,
-                    wins: 94,
-                    losses: 79,
-                    streak: 5,
-                    drops: 0,
-                    disputes: 1
-                },
-                {
-                    player_id: 'player-2',
-                    faction_id: 'faction-soviets',
-                    gamemode_id: 'gamemode-3v3',
-                    rank: 2,
-                    wins: 120,
-                    losses: 90,
-                    streak: 10,
-                    drops: 0,
-                    disputes: 3
-                },
-                {
-                    player_id: 'player-0',
-                    faction_id: 'faction-germans',
-                    gamemode_id: 'gamemode-4v4',
-                    rank: 2,
-                    wins: 98,
-                    losses: 90,
-                    streak: -1,
-                    drops: 0,
-                    disputes: 2
-                },
-                {
-                    player_id: 'player-1',
-                    faction_id: 'faction-germans',
-                    gamemode_id: 'gamemode-4v4',
-                    rank: 3,
-                    wins: 94,
-                    losses: 79,
-                    streak: 5,
-                    drops: 0,
-                    disputes: 1
-                },
-                {
-                    player_id: 'player-2',
-                    faction_id: 'faction-germans',
-                    gamemode_id: 'gamemode-4v4',
-                    rank: 1,
-                    wins: 120,
-                    losses: 90,
-                    streak: 10,
-                    drops: 0,
-                    disputes: 3
-                },
-                {
-                    player_id: 'player-0',
-                    faction_id: 'faction-soviets',
-                    gamemode_id: 'gamemode-4v4',
-                    rank: 2,
-                    wins: 98,
-                    losses: 90,
-                    streak: -1,
-                    drops: 0,
-                    disputes: 2
-                },
-                {
-                    player_id: 'player-1',
-                    faction_id: 'faction-soviets',
-                    gamemode_id: 'gamemode-4v4',
-                    rank: 3,
-                    wins: 94,
-                    losses: 79,
-                    streak: 5,
-                    drops: 0,
-                    disputes: 1
-                },
-                {
-                    player_id: 'player-2',
-                    faction_id: 'faction-soviets',
-                    gamemode_id: 'gamemode-4v4',
-                    rank: 1,
-                    wins: 120,
-                    losses: 90,
-                    streak: 10,
-                    drops: 0,
-                    disputes: 3
-                }
-            ],
+            type: 'ajax',
+            enablePagingParams: false,
+            extraParams: {
+                key: 'coh2org832adfeb'
+            },
+            url: 'data/ladder-faction0-gametype1.json',
             reader: {
-                type: 'json'
+                type: 'json',
+                rootProperty: 'data',
+                successProperty: 'data'
             }
         }
+    },
+
+    onJsonException: function(reader, response, error, eOpts) {
+        debugger;
+        alert(error);
     }
+
 });

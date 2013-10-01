@@ -18,6 +18,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "id"
+            },
+            "designerId": "8caf9382-25ee-4b88-81ed-9fbda1c4c2a7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "alias",
                 "name": "name",
                 "type": "string"
             },
@@ -31,6 +44,42 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "name",
+                "name": "steam_id",
+                "type": "string"
+            },
+            "designerId": "a230dea5-ef90-4f7d-979b-0cb4d97baec0",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "convert",
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "implHandler": [
+                            "return (/^\\/steam\\/(.*)$/).exec(v)[1];"
+                        ]
+                    },
+                    "designerId": "97734cd5-e7ac-46e7-b355-91b039efcaff"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "name",
                 "name": "steam_avatar_url",
                 "type": "string"
             },
@@ -44,10 +93,32 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "name",
                 "name": "steam_profile_url",
                 "type": "string"
             },
-            "designerId": "089441e8-ffbe-4bd1-9cd8-c0fd6266d25d"
+            "designerId": "089441e8-ffbe-4bd1-9cd8-c0fd6266d25d",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "convert",
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "implHandler": [
+                            "return 'http://steamcommunity.com/profiles/' + (/^\\/steam\\/(.*)$/).exec(v)[1];"
+                        ]
+                    },
+                    "designerId": "61e640df-a94e-4431-b80e-908106110e49"
+                }
+            ]
         },
         {
             "type": "Ext.data.Field",
@@ -57,10 +128,32 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "xp",
                 "name": "level",
                 "type": "int"
             },
-            "designerId": "49bc1c94-61c9-433f-b119-46cc554fad79"
+            "designerId": "49bc1c94-61c9-433f-b119-46cc554fad79",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "convert",
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "implHandler": [
+                            "return v % 100;"
+                        ]
+                    },
+                    "designerId": "713f66cf-4fd5-4888-91a4-61380878dfa9"
+                }
+            ]
         },
         {
             "type": "Ext.data.Field",
@@ -70,6 +163,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "xp",
                 "name": "experience",
                 "type": "int"
             },
@@ -84,8 +178,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "hasManyRank",
-                "model": "Rank",
-                "autoLoad": true
+                "model": "Rank"
             },
             "designerId": "87a480c1-5298-46eb-8d2e-169595bf0a24"
         },
@@ -98,34 +191,7 @@
             "codeClass": null,
             "userConfig": {
                 "batchActions": false,
-                "data": [
-                    "[",
-                    "    {",
-                    "        id: 'player-0',",
-                    "        name: 'Qvazar',",
-                    "        steam_avatar_url: 'http://media.steampowered.com/steamcommunity/public/images/avatars/e6/e67d1e9ca8a6399421f7f04fd279e33d5bb850f2_full.jpg',",
-                    "        steam_profile_url: 'http://steamcommunity.com/profiles/76561198038741197/',",
-                    "        level: 74,",
-                    "        experience: 2624093",
-                    "    },",
-                    "    {",
-                    "        id: 'player-1',",
-                    "        name: 'AmiPolizeiFunk',",
-                    "        steam_avatar_url: 'http://media.steampowered.com/steamcommunity/public/images/avatars/96/967ec7de5b0cc44723fc349f8452b3c46537c165_full.jpg',",
-                    "        steam_profile_url: 'http://steamcommunity.com/profiles/76561197993926044/',",
-                    "        level: 54,",
-                    "        experience: 1224093",
-                    "    },",
-                    "    {",
-                    "        id: 'player-2',",
-                    "        name: 'Sepha',",
-                    "        steam_avatar_url: 'http://media.steampowered.com/steamcommunity/public/images/avatars/b0/b054576a4d67fc1e49739c435bbf3b7790043c38_full.jpg',",
-                    "        steam_profile_url: 'http://steamcommunity.com/profiles/76561198002889232',",
-                    "        level: 56,",
-                    "        experience: 1624093",
-                    "    }",
-                    "]"
-                ]
+                "data": null
             },
             "designerId": "8f18ed6d-d735-409d-b722-195fb289d275",
             "cn": [
@@ -139,6 +205,40 @@
                     "designerId": "5d70fc4e-82fd-4bce-a5e8-7690b2d713a9"
                 }
             ]
+        },
+        {
+            "type": "staticfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getBannedSteamIds",
+                "implHandler": [
+                    "return [",
+                    "76561198016776720, // - BartonPL --done",
+                    "76561198012811763, // - VonIvan --done",
+                    "76561197980175112 // - BaoLiang --done",
+                    "];"
+                ]
+            },
+            "designerId": "4f634629-44ac-4798-91a5-236a5b197ddd"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "isBanned",
+                "implHandler": [
+                    "return Coh2Ladder.model.Player.getBannedSteamIds().indexOf(this.get('steam_id')) != -1;"
+                ]
+            },
+            "designerId": "9b1ebd82-97ae-462a-9144-2c621e7b06f5"
         }
     ]
 }

@@ -91,7 +91,7 @@ Ext.define('Coh2Ladder.controller.LadderTabController', {
     launch: function() {
 
         // Need to load here to correctly load the data, as the first record loaded through associations is wrong..
-        this.getPlayerStore().load();
+        //this.getPlayerStore().load();
 
         var gameModeButtons = this.getGameModeButtons(),
             ladderStack = this.getLadderStack(),
@@ -130,6 +130,7 @@ Ext.define('Coh2Ladder.controller.LadderTabController', {
                                     activeGameModeFactions[gameModeId] = factionId;
                                 }
 
+                                //debugger;
                                 items.push({
                                     xtype: 'ladderpage',
                                     factionId: factionId,

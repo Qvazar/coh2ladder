@@ -141,6 +141,7 @@
                     "}",
                     "]);",
                     "",
+                    "//debugger;",
                     "store.load();",
                     "",
                     "//dataView.refresh();",

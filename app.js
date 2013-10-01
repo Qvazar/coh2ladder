@@ -19,17 +19,6 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
-    factionStore: {
-        model: 'Coh2Ladder.model.Faction',
-        sorters: 'name'
-    },
-    gameModeStore: {
-        model: 'Coh2Ladder.model.GameMode',
-        sorters: 'name'
-    },
-    playerStore: {
-        model: 'Coh2Ladder.model.Player'
-    },
     models: [
         'Player',
         'Rank',

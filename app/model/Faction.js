@@ -30,11 +30,11 @@ Ext.define('Coh2Ladder.model.Faction', {
             type: 'memory',
             data: [
                 {
-                    id: 'faction-germans',
+                    id: 'faction-0',
                     name: 'Germans'
                 },
                 {
-                    id: 'faction-soviets',
+                    id: 'faction-1',
                     name: 'Soviets'
                 }
             ],

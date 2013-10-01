@@ -18,9 +18,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "player_id"
+                "name": "id"
             },
-            "designerId": "3ff65462-fb3d-417d-a1e7-8b0290608e43"
+            "designerId": "ada5b9ee-4ecd-4cf4-8e28-891448c21aa6"
         },
         {
             "type": "Ext.data.Field",
@@ -30,9 +30,31 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "stat.raceID",
                 "name": "faction_id"
             },
-            "designerId": "0eef6d80-6b8f-409d-9971-004f8ecbfa35"
+            "designerId": "0eef6d80-6b8f-409d-9971-004f8ecbfa35",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "convert",
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "implHandler": [
+                            "return 'faction-' + v;"
+                        ]
+                    },
+                    "designerId": "07f2a3ed-b87d-4e59-953e-b6a68f81c6e2"
+                }
+            ]
         },
         {
             "type": "Ext.data.Field",
@@ -42,9 +64,31 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "stat.matchTypeID",
                 "name": "gamemode_id"
             },
-            "designerId": "ee58d6f4-0e04-4deb-951f-73385b505621"
+            "designerId": "ee58d6f4-0e04-4deb-951f-73385b505621",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "convert",
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "implHandler": [
+                            "return 'gamemode-' + v;"
+                        ]
+                    },
+                    "designerId": "b04ba5c9-fcfb-4524-b863-5b1d7efdbc89"
+                }
+            ]
         },
         {
             "type": "Ext.data.Field",
@@ -54,6 +98,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "stat.ranking",
                 "name": "rank",
                 "type": "int"
             },
@@ -67,6 +112,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "stat.wins",
                 "name": "wins",
                 "type": "int"
             },
@@ -80,6 +126,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "stat.losses",
                 "name": "losses",
                 "type": "int"
             },
@@ -93,6 +140,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "stat.streak",
                 "name": "streak",
                 "type": "int"
             },
@@ -106,6 +154,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "stat.drops",
                 "name": "drops",
                 "type": "int"
             },
@@ -119,23 +168,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "stat.disputes",
                 "name": "disputes",
                 "type": "int"
             },
             "designerId": "a1bed1d8-f666-4983-94f2-5537e2e8a410"
-        },
-        {
-            "type": "Ext.data.association.BelongsTo",
-            "reference": {
-                "name": "belongsTo",
-                "type": "object"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|displayName": "belongsToPlayer",
-                "model": "Player"
-            },
-            "designerId": "9a3c570c-dc46-4cc4-a7f2-6410b488e279"
         },
         {
             "type": "Ext.data.association.HasOne",
@@ -165,288 +202,37 @@
             "designerId": "6859fd1b-2f1c-4858-a27b-660d9d89787d"
         },
         {
-            "type": "Ext.data.proxy.Memory",
+            "type": "Ext.data.association.HasMany",
+            "reference": {
+                "name": "hasMany",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "associatedName": null,
+                "associationKey": "statGroup.members",
+                "designer|displayName": "hasManyPlayer",
+                "model": "Player"
+            },
+            "designerId": "28fdb787-316e-48c7-8908-a3d807c4433c"
+        },
+        {
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "data": [
-                    "[",
-                    "    {",
-                    "        player_id: 'player-0',",
-                    "        faction_id: 'faction-germans',",
-                    "        gamemode_id: 'gamemode-1v1',",
-                    "        rank: 2,",
-                    "        wins:98,",
-                    "        losses: 90,",
-                    "        streak: -1,",
-                    "        drops: 0,",
-                    "        disputes: 2",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-1',",
-                    "        faction_id: 'faction-germans',",
-                    "        gamemode_id: 'gamemode-1v1',",
-                    "        rank: 3,",
-                    "        wins:94,",
-                    "        losses: 79,",
-                    "        streak: 5,",
-                    "        drops: 0,",
-                    "        disputes: 1",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-2',",
-                    "        faction_id: 'faction-germans',",
-                    "        gamemode_id: 'gamemode-1v1',",
-                    "        rank: 1,",
-                    "        wins:120,",
-                    "        losses: 90,",
-                    "        streak: 10,",
-                    "        drops: 0,",
-                    "        disputes: 3",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-0',",
-                    "        faction_id: 'faction-soviets',",
-                    "        gamemode_id: 'gamemode-1v1',",
-                    "        rank: 1,",
-                    "        wins:98,",
-                    "        losses: 90,",
-                    "        streak: -1,",
-                    "        drops: 0,",
-                    "        disputes: 2",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-1',",
-                    "        faction_id: 'faction-soviets',",
-                    "        gamemode_id: 'gamemode-1v1',",
-                    "        rank: 2,",
-                    "        wins:94,",
-                    "        losses: 79,",
-                    "        streak: 5,",
-                    "        drops: 0,",
-                    "        disputes: 1",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-2',",
-                    "        faction_id: 'faction-soviets',",
-                    "        gamemode_id: 'gamemode-1v1',",
-                    "        rank: 3,",
-                    "        wins:120,",
-                    "        losses: 90,",
-                    "        streak: 10,",
-                    "        drops: 0,",
-                    "        disputes: 3",
-                    "    },",
-                    "",
-                    "",
-                    "    {",
-                    "        player_id: 'player-0',",
-                    "        faction_id: 'faction-germans',",
-                    "        gamemode_id: 'gamemode-2v2',",
-                    "        rank: 2,",
-                    "        wins:98,",
-                    "        losses: 90,",
-                    "        streak: -1,",
-                    "        drops: 0,",
-                    "        disputes: 2",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-1',",
-                    "        faction_id: 'faction-germans',",
-                    "        gamemode_id: 'gamemode-2v2',",
-                    "        rank: 3,",
-                    "        wins:94,",
-                    "        losses: 79,",
-                    "        streak: 5,",
-                    "        drops: 0,",
-                    "        disputes: 1",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-2',",
-                    "        faction_id: 'faction-germans',",
-                    "        gamemode_id: 'gamemode-2v2',",
-                    "        rank: 1,",
-                    "        wins:120,",
-                    "        losses: 90,",
-                    "        streak: 10,",
-                    "        drops: 0,",
-                    "        disputes: 3",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-0',",
-                    "        faction_id: 'faction-soviets',",
-                    "        gamemode_id: 'gamemode-2v2',",
-                    "        rank: 2,",
-                    "        wins:98,",
-                    "        losses: 90,",
-                    "        streak: -1,",
-                    "        drops: 0,",
-                    "        disputes: 2",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-1',",
-                    "        faction_id: 'faction-soviets',",
-                    "        gamemode_id: 'gamemode-2v2',",
-                    "        rank: 3,",
-                    "        wins:94,",
-                    "        losses: 79,",
-                    "        streak: 5,",
-                    "        drops: 0,",
-                    "        disputes: 1",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-2',",
-                    "        faction_id: 'faction-soviets',",
-                    "        gamemode_id: 'gamemode-2v2',",
-                    "        rank: 1,",
-                    "        wins:120,",
-                    "        losses: 90,",
-                    "        streak: 10,",
-                    "        drops: 0,",
-                    "        disputes: 3",
-                    "    },",
-                    "",
-                    "",
-                    "    {",
-                    "        player_id: 'player-0',",
-                    "        faction_id: 'faction-germans',",
-                    "        gamemode_id: 'gamemode-3v3',",
-                    "        rank: 1,",
-                    "        wins:98,",
-                    "        losses: 90,",
-                    "        streak: -1,",
-                    "        drops: 0,",
-                    "        disputes: 2",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-1',",
-                    "        faction_id: 'faction-germans',",
-                    "        gamemode_id: 'gamemode-3v3',",
-                    "        rank: 2,",
-                    "        wins:94,",
-                    "        losses: 79,",
-                    "        streak: 5,",
-                    "        drops: 0,",
-                    "        disputes: 1",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-2',",
-                    "        faction_id: 'faction-germans',",
-                    "        gamemode_id: 'gamemode-3v3',",
-                    "        rank: 3,",
-                    "        wins:120,",
-                    "        losses: 90,",
-                    "        streak: 10,",
-                    "        drops: 0,",
-                    "        disputes: 3",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-0',",
-                    "        faction_id: 'faction-soviets',",
-                    "        gamemode_id: 'gamemode-3v3',",
-                    "        rank: 1,",
-                    "        wins:98,",
-                    "        losses: 90,",
-                    "        streak: -1,",
-                    "        drops: 0,",
-                    "        disputes: 2",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-1',",
-                    "        faction_id: 'faction-soviets',",
-                    "        gamemode_id: 'gamemode-3v3',",
-                    "        rank: 3,",
-                    "        wins:94,",
-                    "        losses: 79,",
-                    "        streak: 5,",
-                    "        drops: 0,",
-                    "        disputes: 1",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-2',",
-                    "        faction_id: 'faction-soviets',",
-                    "        gamemode_id: 'gamemode-3v3',",
-                    "        rank: 2,",
-                    "        wins:120,",
-                    "        losses: 90,",
-                    "        streak: 10,",
-                    "        drops: 0,",
-                    "        disputes: 3",
-                    "    },",
-                    "",
-                    "    {",
-                    "        player_id: 'player-0',",
-                    "        faction_id: 'faction-germans',",
-                    "        gamemode_id: 'gamemode-4v4',",
-                    "        rank: 2,",
-                    "        wins:98,",
-                    "        losses: 90,",
-                    "        streak: -1,",
-                    "        drops: 0,",
-                    "        disputes: 2",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-1',",
-                    "        faction_id: 'faction-germans',",
-                    "        gamemode_id: 'gamemode-4v4',",
-                    "        rank: 3,",
-                    "        wins:94,",
-                    "        losses: 79,",
-                    "        streak: 5,",
-                    "        drops: 0,",
-                    "        disputes: 1",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-2',",
-                    "        faction_id: 'faction-germans',",
-                    "        gamemode_id: 'gamemode-4v4',",
-                    "        rank: 1,",
-                    "        wins:120,",
-                    "        losses: 90,",
-                    "        streak: 10,",
-                    "        drops: 0,",
-                    "        disputes: 3",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-0',",
-                    "        faction_id: 'faction-soviets',",
-                    "        gamemode_id: 'gamemode-4v4',",
-                    "        rank: 2,",
-                    "        wins:98,",
-                    "        losses: 90,",
-                    "        streak: -1,",
-                    "        drops: 0,",
-                    "        disputes: 2",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-1',",
-                    "        faction_id: 'faction-soviets',",
-                    "        gamemode_id: 'gamemode-4v4',",
-                    "        rank: 3,",
-                    "        wins:94,",
-                    "        losses: 79,",
-                    "        streak: 5,",
-                    "        drops: 0,",
-                    "        disputes: 1",
-                    "    },",
-                    "    {",
-                    "        player_id: 'player-2',",
-                    "        faction_id: 'faction-soviets',",
-                    "        gamemode_id: 'gamemode-4v4',",
-                    "        rank: 1,",
-                    "        wins:120,",
-                    "        losses: 90,",
-                    "        streak: 10,",
-                    "        drops: 0,",
-                    "        disputes: 3",
-                    "    }",
-                    "]"
-                ]
+                "enablePagingParams": false,
+                "extraParams": [
+                    "{",
+                    "    key: 'coh2org832adfeb'",
+                    "}"
+                ],
+                "url": "data/ladder-faction0-gametype1.json"
             },
-            "designerId": "c1a91fdb-9995-4c7a-b309-50cb94c07eb0",
+            "designerId": "b7a07c69-856e-4a97-9fe9-f88f1124f972",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -455,7 +241,30 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "designerId": "dfff1134-b3cf-44b5-985b-d7e8ef66ca09"
+                    "userConfig": {
+                        "rootProperty": "data",
+                        "successProperty": "data"
+                    },
+                    "designerId": "1f7a1fb4-a9f8-43ae-b2ad-edf4d099504a",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onJsonException",
+                                "implHandler": [
+                                    "debugger;",
+                                    "alert(error);"
+                                ],
+                                "name": "exception"
+                            },
+                            "designerId": "e421dc4c-491b-44e2-8e8a-2c93c3757c4b"
+                        }
+                    ]
                 }
             ]
         }

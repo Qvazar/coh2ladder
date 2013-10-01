@@ -20,65 +20,75 @@ Ext.define('Coh2Ladder.model.Player', {
         'Coh2Ladder.model.Rank'
     ],
 
+    statics: {
+        getBannedSteamIds: function() {
+            return [
+            76561198016776720, // - BartonPL --done
+            76561198012811763, // - VonIvan --done
+            76561197980175112 // - BaoLiang --done
+            ];
+        }
+    },
+
     config: {
         fields: [
             {
+                name: 'id'
+            },
+            {
+                mapping: 'alias',
                 name: 'name',
                 type: 'string'
             },
             {
+                convert: function(v, rec) {
+                    return (/^\/steam\/(.*)$/).exec(v)[1];
+                },
+                mapping: 'name',
+                name: 'steam_id',
+                type: 'string'
+            },
+            {
+                mapping: 'name',
                 name: 'steam_avatar_url',
                 type: 'string'
             },
             {
+                convert: function(v, rec) {
+                    return 'http://steamcommunity.com/profiles/' + (/^\/steam\/(.*)$/).exec(v)[1];
+                },
+                mapping: 'name',
                 name: 'steam_profile_url',
                 type: 'string'
             },
             {
+                convert: function(v, rec) {
+                    return v % 100;
+                },
+                mapping: 'xp',
                 name: 'level',
                 type: 'int'
             },
             {
+                mapping: 'xp',
                 name: 'experience',
                 type: 'int'
             }
         ],
         hasMany: {
-            model: 'Coh2Ladder.model.Rank',
-            autoLoad: true
+            model: 'Coh2Ladder.model.Rank'
         },
         proxy: {
             type: 'memory',
             batchActions: false,
-            data: [
-                {
-                    id: 'player-0',
-                    name: 'Qvazar',
-                    steam_avatar_url: 'http://media.steampowered.com/steamcommunity/public/images/avatars/e6/e67d1e9ca8a6399421f7f04fd279e33d5bb850f2_full.jpg',
-                    steam_profile_url: 'http://steamcommunity.com/profiles/76561198038741197/',
-                    level: 74,
-                    experience: 2624093
-                },
-                {
-                    id: 'player-1',
-                    name: 'AmiPolizeiFunk',
-                    steam_avatar_url: 'http://media.steampowered.com/steamcommunity/public/images/avatars/96/967ec7de5b0cc44723fc349f8452b3c46537c165_full.jpg',
-                    steam_profile_url: 'http://steamcommunity.com/profiles/76561197993926044/',
-                    level: 54,
-                    experience: 1224093
-                },
-                {
-                    id: 'player-2',
-                    name: 'Sepha',
-                    steam_avatar_url: 'http://media.steampowered.com/steamcommunity/public/images/avatars/b0/b054576a4d67fc1e49739c435bbf3b7790043c38_full.jpg',
-                    steam_profile_url: 'http://steamcommunity.com/profiles/76561198002889232',
-                    level: 56,
-                    experience: 1624093
-                }
-            ],
             reader: {
                 type: 'json'
             }
         }
+    },
+
+    isBanned: function() {
+        return Coh2Ladder.model.Player.getBannedSteamIds().indexOf(this.get('steam_id')) != -1;
     }
+
 });

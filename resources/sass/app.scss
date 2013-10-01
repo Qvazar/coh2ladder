@@ -65,11 +65,11 @@ $base-color: #bbb;
     /*background-color: white;*/
 }
 
-.factionpage.faction-germans {
+.factionpage.faction-0 {
     background-image:url("../images/germans_bg.png");
 }
 
-.factionpage.faction-soviets {
+.factionpage.faction-1 {
     background-image:url("../images/soviets_bg.png");
 }
 
@@ -90,6 +90,7 @@ $base-color: #bbb;
     padding: 0.4em;
     text-align:center;
     overflow:hidden;
+    white-space: nowrap;
 }
 
 .ladder-cell div {
